@@ -36,6 +36,8 @@
     "typography-theme-wordpress-2016": "^0.16.19"
   },
   "devDependencies": {
+    "eslint": "^6.1.0",
+    "eslint-plugin-react": "^7.14.3",
     "gh-pages": "^2.1.1",
     "prettier": "^1.18.2"
   },
@@ -50,6 +52,7 @@
     "url": "git+https://github.com/gatsbyjs/gatsby-starter-blog.git"
   },
   "scripts": {
+    "lint": "eslint",
     "build": "gatsby build",
     "develop": "gatsby develop",
     "deploy": "gatsby build && gh-pages -d public -b master",
