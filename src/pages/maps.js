@@ -20,7 +20,11 @@ class SimpleMap extends Component {
   render() {
     return (
       // Important! Always set the container height explicitly
-      <div style={{ height: '100vh', width: '100%' }}>
+      <React.Fragment>
+      <div style={{ backgroundColor: 'blue', height: '15vh', width: '100%'}}>
+          <table></table>
+      </div>
+      <div style={{ height: '85vh', width: '100%' }}>
         <GoogleMapReact
           bootstrapURLKeys={
                 { key: this.props.key}
@@ -35,6 +39,7 @@ class SimpleMap extends Component {
           />
         </GoogleMapReact>
       </div>
+      </React.Fragment>
     );
   }
 }
