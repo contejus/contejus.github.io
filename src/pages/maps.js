@@ -3,7 +3,8 @@ import React, { Component } from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import GoogleMapReact from 'google-map-react';
- 
+import MapsApiKey from '../pages/api_keys';
+
 const AnyReactComponent = ({ text }) => <div>{text}</div>;
  
 class SimpleMap extends Component {
@@ -12,7 +13,8 @@ class SimpleMap extends Component {
       lat: 0,
       lng: 0
     },
-    zoom: 0
+    zoom: 0,
+    key: MapsApiKey['key']
   };
  
   render() {
@@ -21,7 +23,7 @@ class SimpleMap extends Component {
       <div style={{ height: '100vh', width: '100%' }}>
         <GoogleMapReact
           bootstrapURLKeys={
-                { key: ''}
+                { key: this.props.key}
             }
           defaultCenter={this.props.center}
           defaultZoom={this.props.zoom}
