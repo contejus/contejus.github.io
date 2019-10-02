@@ -3,7 +3,6 @@ import React, { Component } from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import GoogleMapReact from 'google-map-react';
-import MapsApiKey from '../pages/api_keys';
 import 'bootstrap/dist/css/bootstrap.css';
 
 import {Navbar, NavbarBrand, Nav} from 'react-bootstrap';
