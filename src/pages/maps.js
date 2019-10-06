@@ -2,6 +2,7 @@ import React, { Component } from "react"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import SiteNavbar from "../components/navbar"
 import GoogleMapReact from 'google-map-react';
 import 'bootstrap/dist/css/bootstrap.css';
 
@@ -23,14 +24,8 @@ class SimpleMap extends Component {
     return (
       // Important! Always set the container height explicitly
       <React.Fragment>
-        <Navbar bg='dark' variant='dark' style={{height: '10vh', width: '100%'}}>
-          <Navbar.Brand href="/">Tejus Mathew</Navbar.Brand>
-          <Nav className="mr-auto">
-            <Nav.Link href="/">Home</Nav.Link>
-            <Nav.Link href="/">Projects</Nav.Link>
-            <Nav.Link href="/">Visitor Map</Nav.Link>
-          </Nav>
-        </Navbar>
+        <SiteNavbar>
+        </SiteNavbar>
         <div style={{ height: '90vh', width: '100%' }}>
           <GoogleMapReact
             bootstrapURLKeys={
