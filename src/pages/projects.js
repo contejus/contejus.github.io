@@ -10,8 +10,6 @@ import SiteNavbar from "../components/navbar"
 const ProjectPage = () => (
   <SiteNavbar>
   </SiteNavbar>
-
-  
 )
 
 export default ProjectPage

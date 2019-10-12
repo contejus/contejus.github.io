@@ -6,6 +6,7 @@
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
     "bootstrap": "^4.3.1",
+    "eslint-scope": "^5.0.0",
     "gatsby": "^2.15.15",
     "gatsby-image": "^2.2.19",
     "gatsby-plugin-manifest": "^2.2.16",
@@ -22,10 +23,7 @@
     "react-helmet": "^5.2.1"
   },
   "devDependencies": {
-    "eslint": "^6.4.0",
-    "eslint-plugin-react": "^7.14.3",
-    "gh-pages": "^2.1.1",
-    "prettier": "^1.18.2"
+    "gh-pages": "^2.1.1"
   },
   "keywords": [
     "gatsby"
