@@ -1,4 +1,4 @@
-import React, {Component} from "react"
+import React, { useEffect, Component} from "react"
 import SiteNavbar from "../components/navbar"
 import {Button} from "react-bootstrap"
 import GoogleMapReact from 'google-map-react';
@@ -30,6 +30,27 @@ class SimpleMap extends Component {
     key: 'AIzaSyA1e3zpcICRqv1Hjp8WSS_Rn7iHkJcXNKw'
   };
 
+  constructor() {
+    super()
+    this.state = {
+        latitude: [],
+        longitude: [],
+        location: [],
+        done: false
+    }
+  }
+
+  componentDidMount() {
+    fetch("https://json.geoiplookup.io")
+      .then(res => res.json())
+      .then(result => this.setState({
+        latitude: result.latitude,
+        longitude: result.longitude,
+        location: result.city + ", " + result.region + ", " + result.country_name,
+        done: true
+      })) 
+  }
+
   render() {
     return (
       // Important! Always set the container height explicitly
@@ -45,14 +66,15 @@ class SimpleMap extends Component {
             defaultZoom={this.props.zoom}
           >
              <AnyReactComponent
-              lat={59.955413}
-              lng={30.337844}
-              text="My Marker"
+              lat={this.state.latitude}
+              lng={this.state.longitude}
+              text="You"
             />
           </GoogleMapReact>
         </div>
-        <Button variant="dark" style={{position: 'absolute', bottom: '5%', left: '50%'}}></Button>
-        
+        <div style={{position: 'absolute', bottom: '5%', left: '25%', right: '25%', textAlign: 'center'}}>
+          <Button variant="dark" style={{leftBorderRadius: '0px'}} >You are visiting from: {this.state.location}</Button>
+        </div>
       </React.Fragment>
     );
   }
