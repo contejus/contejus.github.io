@@ -32,7 +32,7 @@ class SimpleMap extends Component {
   };
   
   componentDidMount() {
-    fetch('http://api.ipgeolocation.io/ipgeo?apiKey=' + this.props.lookupKey).then( response => {
+    fetch('https://api.ipgeolocation.io/ipgeo?apiKey=' + this.props.lookupKey).then( response => {
       console.log(response);
     })
   }
