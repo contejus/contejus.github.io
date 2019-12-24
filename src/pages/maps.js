@@ -27,15 +27,9 @@ class SimpleMap extends Component {
       lng: 0
     },
     zoom: 0,
-    key: 'AIzaSyA1e3zpcICRqv1Hjp8WSS_Rn7iHkJcXNKw',
-    lookupKey: '1ad95a049afc4362b5b7309ae1c808a4'
+    key: 'AIzaSyA1e3zpcICRqv1Hjp8WSS_Rn7iHkJcXNKw'
   };
-  
-  componentDidMount() {
-    fetch('https://api.ipgeolocation.io/ipgeo?apiKey=' + this.props.lookupKey).then( response => {
-      console.log(response);
-    })
-  }
+
   render() {
     return (
       // Important! Always set the container height explicitly
