@@ -1,6 +1,6 @@
-import React, { Component } from "react"
-
+import React, {Component} from "react"
 import SiteNavbar from "../components/navbar"
+import {Button} from "react-bootstrap"
 import GoogleMapReact from 'google-map-react';
 import 'bootstrap/dist/css/bootstrap.css';
 
@@ -27,9 +27,15 @@ class SimpleMap extends Component {
       lng: 0
     },
     zoom: 0,
-    key: 'AIzaSyA1e3zpcICRqv1Hjp8WSS_Rn7iHkJcXNKw'
+    key: 'AIzaSyA1e3zpcICRqv1Hjp8WSS_Rn7iHkJcXNKw',
+    lookupKey: '1ad95a049afc4362b5b7309ae1c808a4'
   };
- 
+  
+  componentDidMount() {
+    fetch('http://api.ipgeolocation.io/ipgeo?apiKey=' + this.props.lookupKey).then( response => {
+      console.log(response);
+    })
+  }
   render() {
     return (
       // Important! Always set the container height explicitly
@@ -51,6 +57,7 @@ class SimpleMap extends Component {
             />
           </GoogleMapReact>
         </div>
+        <Button variant="dark" style={{position: 'absolute', bottom: '5%', left: '50%'}}></Button>
         
       </React.Fragment>
     );

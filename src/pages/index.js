@@ -7,13 +7,14 @@ import SiteNavbar from "../components/navbar"
 import {Button, Container, Jumbotron, Col, Row, ModalFooter} from "react-bootstrap"
 import 'bootstrap/dist/css/bootstrap.css';
 
+var link = "https://wallpapercave.com/wp/wp2943265.jpg"
+
 const IndexPage = () => (
   <React.Fragment>
     <SiteNavbar>
     </SiteNavbar>
-      <Jumbotron>
-
-        <Container>
+      <Jumbotron style={{background: "url(" + link + ")", borderRadius: '0px', backgroundSize: 'cover'}}>
+        <Container style={{color: 'white'}}>
           <h1 class="display-4">Welcome</h1>
           <p>Here, you can view some of my projects, view my contact information, or access my GitHub account.</p>
         </Container>
