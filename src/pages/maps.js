@@ -27,7 +27,7 @@ class SimpleMap extends Component {
       lng: 0
     },
     zoom: 0,
-    key: 'AIzaSyA1e3zpcICRqv1Hjp8WSS_Rn7iHkJcXNKw'
+    key: 'AIzaSyCQuo1OKiBqgURMSaSFpcxSrwMHjgCuLag'
   };
 
   constructor() {
