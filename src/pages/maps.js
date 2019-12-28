@@ -7,7 +7,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 const AnyReactComponent = ({ text }) => (
   <div style={{
     color: 'white', 
-    background: 'grey',
+    background: 'blue',
     padding: '15px 10px',
     display: 'inline-flex',
     textAlign: 'center',
