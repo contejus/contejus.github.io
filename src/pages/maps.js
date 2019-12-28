@@ -7,7 +7,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 const AnyReactComponent = ({ text }) => (
   <div style={{
     color: 'white', 
-    background: 'blue',
+    background: 'gray',
     padding: '15px 10px',
     display: 'inline-flex',
     textAlign: 'center',
@@ -106,6 +106,7 @@ class SimpleMap extends Component {
               lat={this.state.latitude}
               lng={this.state.longitude}
               text="You"
+              style={{background: 'blue'}}
               />
           </GoogleMapReact>
         </div>
