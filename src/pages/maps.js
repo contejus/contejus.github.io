@@ -47,12 +47,10 @@ class SimpleMap extends Component {
       method: "GET",    
     }).then(res => res.json())
     .then(result2 => {
-      console.log(result2);
       this.setState({
         prevLocations: result2['objects'],
       });
       this.state.prevLocations.forEach ( location => {
-        console.log(location)
         this.props.items.push(
           <AnyReactComponent
                 lat={location['latitude']}

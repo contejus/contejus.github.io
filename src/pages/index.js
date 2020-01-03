@@ -27,7 +27,7 @@ const IndexPage = () => (
               I am a fourth year ECE student at UT Austin, focusing on 
               integrated circuits and software development.
             </p>
-            <Button variant="dark">View my coursework</Button>
+            <Button variant="dark" href="/coursework">View my coursework</Button>
           </Col>
           <Col md={4}>
             <h3 class="display-7">Projects</h3>
