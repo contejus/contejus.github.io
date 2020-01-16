@@ -4,7 +4,7 @@ import SiteNavbar from "../components/navbar"
 import {Card, Button, Container, Row, Col, Jumbotron} from "react-bootstrap"
 import 'bootstrap/dist/css/bootstrap.css';
 
-var link = "https://img9.uhdpixel.com/wp/a/48/abstract-art-background-b456.jpg"
+var link = "https://wallpapercave.com/wp/wp2943265.jpg"
 
 class ProjectPage extends React.Component {
   render(){
