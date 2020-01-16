@@ -15,7 +15,9 @@ class ProjectPage extends React.Component {
           <Jumbotron style={{background: "url(" + link + ")", borderRadius: '0px', backgroundSize: 'cover'}}>
             <Container style={{color: 'white'}}>
               <h1 class="display-4">Projects</h1>
-              <p>View links to projects I've worked on both in school and at internships</p>
+              <p>View links to projects I've worked on, both in-school and at internships. These projects cover topics ranging from data 
+                analysis to API development. 
+              </p>
             </Container>
           </Jumbotron>
           <Container style={{marginTop: '5vh'}}>
