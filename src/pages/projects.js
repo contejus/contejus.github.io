@@ -21,37 +21,40 @@ class ProjectPage extends React.Component {
           </Jumbotron>
           <Container style={{marginTop: '5vh'}}>
             <Row>
-              <Col>
+              <Col style={{marginBottom: '30px'}}>
                 <Card style={{width: '18rem'}}>
+                  <Card.Img variant="top" src="https://img.rawpixel.com/s3fs-private/rawpixel_images/website_content/v261-minty-financedoodle-02_2.jpg?auto=format&bg=transparent&con=3&cs=srgb&dpr=1&fm=jpg&ixlib=php-3.1.0&mark=rawpixel-watermark.png&markalpha=90&markpad=13&markscale=10&markx=25&q=75&usm=15&vib=3&w=1200&s=9cca881fefd48c75cb8bf77f99777f31" />
                   <Card.Body>
                     <Card.Title>Credit Card Fraud</Card.Title>
                     <Card.Text>
-                      Using masked credit card credentials and transaction properties to identify
-                      if current transactions are fraudulent using sklearn classifiers. 
+                      Using masked credit card credentials to identify
+                      fraudulent transactions. 
                     </Card.Text>
-                    <Button variant="dark" href="/creditCardFraud">View</Button>
+                    <Button variant="dark" href="https://github.com/contejus/CreditCardFraud">View</Button>
                   </Card.Body>
                 </Card>
               </Col>
-              <Col>
+              <Col style={{marginBottom: '30px'}}>
               <Card style={{width: '18rem'}}>
+                <Card.Img variant="top" src="https://media.architecturaldigest.in/wp-content/uploads/2019/12/payal-singhal-wallpaper-marshalls-866x487.jpg" />
                   <Card.Body>
-                    <Card.Title>Credit Card Fraud</Card.Title>
+                    <Card.Title>Fashion Review Analysis</Card.Title>
                     <Card.Text>
-                      Placeholder text for test project card.
+                      Predicting customer ratings and recommendations given sentiment present in review text, using sklearn and Python to build the model. 
                     </Card.Text>
-                    <Button variant="dark">View</Button>
+                    <Button variant="dark" href="https://github.com/contejus/FashionReviewAnalysis">View</Button>
                   </Card.Body>
                 </Card>
               </Col>
-              <Col>
+              <Col style={{marginBottom: '30px'}}>
                 <Card style={{width: '18rem'}}>
+                  <Card.Img variant="top" src="https://cnet3.cbsistatic.com/img/2019/04/09/5cfe13f7-c26b-4e74-a581-751937af380c/accord-hero.jpg" />
                   <Card.Body>
-                    <Card.Title>Credit Card Fraud</Card.Title>
+                    <Card.Title>Car MPG Prediction</Card.Title>
                     <Card.Text>
-                      Placeholder text for test project card.
+                      Using a car's weight, size, and engine type (ex. cylinder count, volume) to predict its fuel efficiency.
                     </Card.Text>
-                    <Button variant="dark">View</Button>
+                    <Button variant="dark" href="https://github.com/contejus/CarMPGPrediction">View</Button>
                   </Card.Body>
                 </Card>
               </Col>
@@ -59,34 +62,37 @@ class ProjectPage extends React.Component {
           </Container>
           <Container style={{marginTop: '5vh'}}>
             <Row>
-              <Col>
+              <Col style={{marginBottom: '30px'}}>
                   <Card style={{width: '18rem'}}>
+                    <Card.Img variant="top" src="https://hackernoon.com/drafts/a4zx3210.png" />
                     <Card.Body>
-                      <Card.Title>Credit Card Fraud</Card.Title>
+                      <Card.Title>contejus.github.io</Card.Title>
                       <Card.Text>
-                        Placeholder text for test project card.
+                        View the source code behind this website, built using Gatsby, React, and Django for functionality. 
                       </Card.Text>
-                      <Button variant="dark">View</Button>
+                      <Button variant="dark" href="https://github.com/contejus/contejus.github.io">View</Button>
                     </Card.Body>
                   </Card>
                 </Col>
-                <Col>
+              <Col style={{marginBottom: '30px'}}>
                 <Card style={{width: '18rem'}}>
+                    <Card.Img variant="top" src="https://images.idgesg.net/images/article/2018/05/insurance-policy-100759623-large.jpg" />
                     <Card.Body>
-                      <Card.Title>Credit Card Fraud</Card.Title>
+                      <Card.Title>Insurance Cold Call Success</Card.Title>
                       <Card.Text>
-                        Placeholder text for test project card.
+                        Predict the success percentage of an insurance cold call given parameters about the person being called. 
                       </Card.Text>
-                      <Button variant="dark">View</Button>
+                      <Button variant="dark" href="https://github.com/contejus/InsuranceColdCallSuccess">View</Button>
                     </Card.Body>
                   </Card>
                 </Col>
-                <Col>
+                <Col style={{marginBottom: '30px'}}>
                   <Card style={{width: '18rem'}}>
+                    <Card.Img variant="top" src="https://via.placeholder.com/750" />
                     <Card.Body>
-                      <Card.Title>Credit Card Fraud</Card.Title>
+                      <Card.Title>Coming Soon</Card.Title>
                       <Card.Text>
-                        Placeholder text for test project card.
+                        Placeholder text for project card.
                       </Card.Text>
                       <Button variant="dark">View</Button>
                     </Card.Body>
