@@ -4,6 +4,7 @@ import SiteNavbar from "../components/navbar"
 import {Card, Button, Container, Row, Col, Jumbotron} from "react-bootstrap"
 import 'bootstrap/dist/css/bootstrap.css';
 
+var link = "https://img9.uhdpixel.com/wp/a/48/abstract-art-background-b456.jpg"
 
 class ProjectPage extends React.Component {
   render(){
@@ -11,8 +12,11 @@ class ProjectPage extends React.Component {
       <React.Fragment>
           <SiteNavbar>
           </SiteNavbar>
-          <Jumbotron>
-
+          <Jumbotron style={{background: "url(" + link + ")", borderRadius: '0px', backgroundSize: 'cover'}}>
+            <Container style={{color: 'white'}}>
+              <h1 class="display-4">Projects</h1>
+              <p>View links to projects I've worked on both in school and at internships</p>
+            </Container>
           </Jumbotron>
           <Container style={{marginTop: '5vh'}}>
             <Row>

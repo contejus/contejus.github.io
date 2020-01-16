@@ -7,7 +7,7 @@ import SiteNavbar from "../components/navbar"
 import {Button, Container, Jumbotron, Col, Row, ModalFooter} from "react-bootstrap"
 import 'bootstrap/dist/css/bootstrap.css';
 
-var link = "https://wallpapercave.com/wp/wp2943265.jpg"
+var link = "https://img9.uhdpixel.com/wp/a/19/minimalist-abstract-hexagon-colorful-a1949.jpg"
 
 const IndexPage = () => (
   <React.Fragment>
