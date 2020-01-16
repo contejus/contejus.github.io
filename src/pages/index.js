@@ -21,7 +21,7 @@ const IndexPage = () => (
       </Jumbotron>
       <Container>
         <Row>
-          <Col md={4}>
+          <Col md={4} style={{marginBottom: '5px'}}>
             <h3 class="display-7">About Me</h3>
             <p>
               I am a fourth year ECE student at UT Austin, focusing on 
@@ -29,16 +29,12 @@ const IndexPage = () => (
             </p>
             <Button variant="dark" href="/coursework">View my coursework</Button>
           </Col>
-          <br/>
-          <br/>
-          <Col md={4}>
+          <Col md={4} style={{marginBottom: '5px'}}>
             <h3 class="display-7">Projects</h3>
             <p>View my academic and personal projects, which include data analyses, websites, and more!</p>
             <Button variant="dark" href="/projects">View projects</Button>
           </Col>
-          <br/>
-          <br/>
-          <Col md={4}>
+          <Col md={4} style={{marginBottom: '5px'}}>
             <h3 class="display-7" style={{marginBottom: '1.25rem'}}>Contact Me</h3>
             <Row style={{textAlign: 'center'}}>
               <Col>
