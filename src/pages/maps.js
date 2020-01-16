@@ -1,6 +1,6 @@
 import React, { useEffect, Component} from "react"
 import SiteNavbar from "../components/navbar"
-import {Button} from "react-bootstrap"
+import {Button, Spinner} from "react-bootstrap"
 import GoogleMapReact from 'google-map-react';
 import 'bootstrap/dist/css/bootstrap.css';
 
@@ -65,8 +65,7 @@ class SimpleMap extends Component {
           this.setState({
             latitude: result.latitude,
             longitude: result.longitude,
-            location: result.city + ", " + result.region + ", " + result.country_name,
-            done: true
+            location: result.city + ", " + result.region + ", " + result.country_name
           });
           fetch("https://infinite-ocean-46338.herokuapp.com/api/location/", {
             method: "POST",
@@ -78,19 +77,21 @@ class SimpleMap extends Component {
               "longitude": (this.state.longitude)
             })      
           })
-          
+          this.setState({
+            done: true
+          });
         })  
       }  
     )
   }
 
   render() {
+    const isLoading = this.state.done;
+    let section;
 
-    return (
-      // Important! Always set the container height explicitly
-      <React.Fragment>
-        <SiteNavbar>
-        </SiteNavbar>
+    if (isLoading) {
+      section = 
+      <div>
         <div style={{ height: '90vh', width: '100%' }}>
           <GoogleMapReact
             bootstrapURLKeys={
@@ -100,7 +101,7 @@ class SimpleMap extends Component {
             defaultZoom={this.props.zoom}
           >
             {this.props.items}
-             <AnyReactComponent
+            <AnyReactComponent
               lat={this.state.latitude}
               lng={this.state.longitude}
               text="You"
@@ -111,6 +112,32 @@ class SimpleMap extends Component {
         <div style={{position: 'absolute', bottom: '5%', left: '25%', right: '25%', textAlign: 'center'}}>
           <Button variant="dark" style={{leftBorderRadius: '0px'}} >You are visiting from: {this.state.location}</Button>
         </div>
+      </div>;
+    } else {
+      section = 
+      <div style={{ height: '90vh', width: '100%' }}>
+        <div style={{position: 'absolute', top: '50%', left: '50%'}}>
+          <Spinner animation="border" role="status" style={{
+            position: 'absolute',
+            height: '100px',
+            width: '100px',
+            top: '50%',
+            left: '50%',
+            marginLeft: '-50px',
+            marginTop: '-50px'
+          }}>
+            <span className="sr-only">Loading...</span>
+          </Spinner>
+        </div>
+      </div>;
+    }
+
+    return (
+      // Important! Always set the container height explicitly
+      <React.Fragment>
+        <SiteNavbar>
+        </SiteNavbar>
+        {section}
       </React.Fragment>
     );
   }
