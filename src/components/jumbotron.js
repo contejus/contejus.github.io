@@ -1,25 +1,22 @@
 import React from "react";
-import "../stylesheets/styles.scss";
+import "../stylesheets/jumbotron.scss";
 
 class Jumbotron extends React.Component {
     constructor(){
         super();
-        this.state = {
-            isOpen: false
-        }
     }
 
     render() {
         return (
-            <section class="hero is-link">
+            <section class="hero is-jumbotron is-black">
                 <div class="hero-body">
                     <div class="container">
-                    <h1 class="title">
-                        Primary title
-                    </h1>
-                    <h2 class="subtitle">
-                        Primary subtitle
-                    </h2>
+                        <h1 class="title">
+                            {this.props.title}
+                        </h1>
+                        <h2 class="subtitle">
+                            {this.props.subtitle}
+                        </h2>
                     </div>
                 </div>
             </section>

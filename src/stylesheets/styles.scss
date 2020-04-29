@@ -1,9 +1,8 @@
 @charset "utf-8";
 
 $blue: #183693;
-
+$family-sans-serif: Roboto;
 $primary: $blue;
-$title-color: #ff0000;
 $body-background-color: lightgrey;
 
 @import "../../node_modules/bulma/bulma.sass";

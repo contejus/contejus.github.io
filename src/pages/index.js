@@ -7,7 +7,7 @@ const IndexPage = () => {
     <div>
         <Navbar>
         </Navbar>
-        <Jumbotron>
+        <Jumbotron title="Welcome" subtitle="Use the navigation bar to view other pages, or check out some things I'm working on below">
         </Jumbotron>
     </div>
   )
