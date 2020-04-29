@@ -1,3 +1,16 @@
 import React from "react"
+import Navbar from "../components/navbar.js"
+import Jumbotron from "../components/jumbotron.js"
 
-export default () => <div>Hello world!</div>
+const IndexPage = () => {
+  return (
+    <div>
+        <Navbar>
+        </Navbar>
+        <Jumbotron>
+        </Jumbotron>
+    </div>
+  )
+}
+
+export default IndexPage
