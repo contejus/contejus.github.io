@@ -2,7 +2,10 @@
 
 @import "./styles.scss";
 
-.is-jumbotron {
+.is-404 {
     background-image: linear-gradient($blue, $black);
-    box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.05),inset 0 -1px 0 rgba(0,0,0,0.15);
+}
+
+.not-found-msg {
+    text-align: center;
 }

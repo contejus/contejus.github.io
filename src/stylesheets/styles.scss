@@ -1,8 +1,18 @@
 @charset "utf-8";
 
-$blue: #183693;
+$blue: 	#003366;
+$black: #004282;
+$white: #FFFFFF;
+$background: #DAE1E9;
+
 $family-sans-serif: Roboto;
 $primary: $blue;
-$body-background-color: lightgrey;
+$body-background-color: #F2F2F2;
+$footer-background-color: $blue;
+$panel-list-item-hover-color: unset;
 
 @import "../../node_modules/bulma/bulma.sass";
+
+.projects-column {
+    text-align: center;
+}

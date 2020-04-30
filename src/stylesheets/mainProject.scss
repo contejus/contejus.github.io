@@ -1,0 +1,28 @@
+@charset "utf-8";
+
+@import "./styles.scss";
+
+.card-section {
+    background: $black;
+}
+
+.card-section-reverse {
+    background: $background;
+    flex-wrap: wrap-reverse;
+}
+
+.card-color {
+    color: #FFF !important;
+}
+
+h3.card-color {
+    font-weight: 400;
+}
+
+p.card-color {
+    font-weight: 300;
+}
+
+p.subtitle {
+    font-weight: 300;
+}

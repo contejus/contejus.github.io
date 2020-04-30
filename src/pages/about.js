@@ -3,7 +3,7 @@ import Navbar from "../components/navbar.js"
 import Jumbotron from "../components/jumbotron.js"
 import "../stylesheets/styles.scss"
 
-const IndexPage = () => {
+const AboutPage = () => {
   return (
     <div>
         <Navbar />
@@ -13,4 +13,4 @@ const IndexPage = () => {
   )
 }
 
-export default IndexPage
+export default AboutPage

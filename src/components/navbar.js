@@ -11,7 +11,7 @@ class Navbar extends React.Component {
 
     render() {
         return (
-            <nav className="navbar is-link" role="navigation" aria-label="main navigation">
+            <nav className="navbar is-link nav-shadow" role="navigation" aria-label="main navigation">
                 <div className="navbar-brand">
                     <a className="navbar-item nav-home" href="/">
                         <svg className="bi bi-house-door" width="2em" height="2em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -30,43 +30,33 @@ class Navbar extends React.Component {
 
                 <div id="navMenu" className={`navbar-menu ${this.state.isOpen? ' is-active nav-dropdown' : ''}`}>
                     <div className="navbar-start">
-                    <a className="navbar-item">
-                        Coursework
-                    </a>
+                        <a className="navbar-item" href="/coursework">
+                            Coursework
+                        </a>
 
-                    <a className="navbar-item">
-                        Projects
-                    </a>
+                        <a className="navbar-item" href="/projects">
+                            Projects
+                        </a>
 
-                    <a className="navbar-item">
-                        Visitor Map
-                    </a>
+                        <a className="navbar-item" href="/maps">
+                            Visitor Map
+                        </a>
                     
-                    <div className="navbar-item has-dropdown is-hoverable">
-                        <a className="navbar-link">
-                        More
-                        </a>
-
-                        <div className="navbar-dropdown">
-                        <a className="navbar-item">
-                            About Me
-                        </a>
-                        <hr className="navbar-divider"/>
-                        <a className="navbar-item">
-                            Report an issue
-                        </a>
-                        </div>
-                    </div>
-                    </div>
-
-                    <div className="navbar-end">
-                    <div className="navbar-item">
-                        <div className="buttons">
-                            <a className="button is-white is-outlined" href="https://github.com/contejus">
-                                GitHub
+                        <div className="navbar-item has-dropdown is-hoverable">
+                            <a className="navbar-link">
+                            More
                             </a>
+
+                            <div className="navbar-dropdown">
+                                <a className="navbar-item" href="/about">
+                                    About Me
+                                </a>
+                                <hr className="navbar-divider"/>
+                                <a className="navbar-item">
+                                    Report an issue
+                                </a>
+                            </div>
                         </div>
-                    </div>
                     </div>
                 </div>
             </nav>
