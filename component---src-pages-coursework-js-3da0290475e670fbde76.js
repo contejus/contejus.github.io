@@ -1,2 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[4],{iJtF:function(t,e,n){"use strict";n.r(e);var r=n("q1tI"),o=n.n(r),p=n("RMg3");n("+eM2");var a=function(t){var e,n;function r(){return t.apply(this,arguments)||this}return n=t,(e=r).prototype=Object.create(n.prototype),e.prototype.constructor=e,e.__proto__=n,r.prototype.render=function(){return o.a.createElement(o.a.Fragment,null,o.a.createElement(p.a,null))},r}(o.a.Component);e.default=a}}]);
-//# sourceMappingURL=component---src-pages-coursework-js-3da0290475e670fbde76.js.map
