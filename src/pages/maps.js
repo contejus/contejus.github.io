@@ -113,8 +113,8 @@ class MapPage extends React.Component {
                 <div class="message-body">
                     <p>
                         This page finds location by using your IP address. It will not find your exact location, only 
-                        rough area. This location is also stored and secured in my API. Please click below if you accept
-                        these conditions, or close the page if you do not.
+                        the general area. This location is also stored and secured in my API. Please click "Accept" if you 
+                        accept these conditions, or "Cancel" if you do not.
                     </p>
                 </div>
                 <div className="choice-div">

@@ -10,8 +10,8 @@
 .use-art {
     background: repeating-linear-gradient(
         -45deg,
-        #36689B,
-        #36689B 100px,
+        $black,
+        $black 100px,
         black 100px,
         black 200px
       )!important;
