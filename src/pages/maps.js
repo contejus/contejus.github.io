@@ -53,7 +53,7 @@ class MapPage extends React.Component {
     .then(res => res.json())
     .then(result2 => {
         this.setState({
-            prevLocations: result2['objects'],
+            prevLocations: result2,
         });
         this.state.prevLocations.forEach ( location => {
             this.props.items.push(
