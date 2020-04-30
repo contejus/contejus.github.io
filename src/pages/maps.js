@@ -1,4 +1,5 @@
 import React from "react"
+import { Helmet } from "react-helmet"
 
 import Navbar from "../components/navbar.js"
 import GoogleMapReact from 'google-map-react';
@@ -155,8 +156,13 @@ class MapPage extends React.Component {
 
     return (
       <div>
-          <Navbar />
-          {section}
+        <Helmet>
+            <meta charSet="utf-8" />
+            <title>Tejus Mathew</title>
+            <link rel="canonical" href="http://contejus.github.io" />
+        </Helmet>
+        <Navbar />
+        {section}
       </div>
     );
   }
