@@ -1,12 +1,14 @@
 @charset "utf-8";
 
+@import url("https://fonts.googleapis.com/css2?family=Roboto:300");
+
 $blue: 	#003366;
 $black: #4CAAA7;
 $blueComplement: #004282;
 $white: #FFFFFF;
 $background: #DAE1E9;
 
-$family-sans-serif: Roboto;
+$family-sans-serif: "Roboto", sans-serif;
 $primary: $blue;
 $body-background-color: #F2F2F2;
 $footer-background-color: $blue;
