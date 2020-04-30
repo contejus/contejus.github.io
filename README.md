@@ -6,6 +6,8 @@
 
 [Bulma](https://bulma.io/)
 
+[Sass Setup](https://github.com/sass/node-sass)
+
 ## Installation steps
 
 1. Install Gatsby using `npm install -g gatsby-cli`
