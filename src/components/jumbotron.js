@@ -8,7 +8,7 @@ class Jumbotron extends React.Component {
 
     render() {
         return (
-            <section className={`hero is-jumbotron ${this.props.fullscreen} is-black`}>
+            <section className={`hero is-jumbotron ${this.props.fullscreen} is-black ${this.props.background}`}>
                 <div class="hero-body">
                     <div class="container">
                         <div>

@@ -4,7 +4,6 @@ import "../stylesheets/404.scss"
 
 const PageNotFound = () => {
   return (
-    
       <section class="hero is-404 is-fullheight is-black">
           <div class="hero-body">
               <div class="container not-found-msg">
@@ -18,7 +17,6 @@ const PageNotFound = () => {
               </div>
           </div>
         </section>
-
   )
 }
 

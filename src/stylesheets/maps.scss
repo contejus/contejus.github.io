@@ -1,0 +1,40 @@
+@charset "utf-8";
+
+@import "./styles.scss";
+
+.loading-button {
+    height: 93.5vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.map-div {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.location-display {
+    position: absolute;
+    padding-bottom: 4%;
+}
+
+.warning-div {
+    display: flex;
+    height: 93.5vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.privacy {
+    max-width: 50%;
+}
+
+.choice-div {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 2%;
+}

@@ -5,7 +5,7 @@ class Navbar extends React.Component {
     constructor(){
         super();
         this.state = {
-            isOpen: true
+            isOpen: false
         }
     }
 
@@ -51,10 +51,10 @@ class Navbar extends React.Component {
                                 <a className="navbar-item" href="/about">
                                     About Me
                                 </a>
-                                <hr className="navbar-divider"/>
+                                {/* <hr className="navbar-divider"/>
                                 <a className="navbar-item">
                                     Report an issue
-                                </a>
+                                </a> */}
                             </div>
                         </div>
                     </div>

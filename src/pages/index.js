@@ -7,8 +7,12 @@ const IndexPage = () => {
   return (
     <div>
         <Navbar />
-        <Jumbotron title="Tejus Mathew" fullscreen="is-fullheight" subtitle="ECE senior at The University of Texas">
-        </Jumbotron>
+        <Jumbotron 
+          background="use-art" 
+          title="Tejus Mathew" 
+          fullscreen="is-fullheight" 
+          subtitle="ECE senior at The University of Texas"
+        />
     </div>
   )
 }

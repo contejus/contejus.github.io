@@ -1,5 +1,5 @@
 import React from "react";
-import "../stylesheets/footer.scss";
+import "../stylesheets/styles.scss";
 
 class CourseBox extends React.Component {
     render() {
@@ -7,7 +7,7 @@ class CourseBox extends React.Component {
 
         this.props.courses.forEach(course => {
             courseList.push(
-                <a class="panel-block">
+                <a class="panel-block no-select">
                     {course}
                 </a>
             )

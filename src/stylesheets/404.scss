@@ -3,9 +3,10 @@
 @import "./styles.scss";
 
 .is-404 {
-    background-image: linear-gradient($blue, $black);
+    background-image: linear-gradient($blue, black);
 }
 
 .not-found-msg {
     text-align: center;
+    max-width: 50% !important;
 }
