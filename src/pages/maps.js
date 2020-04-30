@@ -47,7 +47,7 @@ class MapPage extends React.Component {
 
   getLocations() {
     // get locations from API
-    fetch("https://infinite-ocean-46338.herokuapp.com/api/location", {
+    fetch("https://tm-location.herokuapp.com/location/", {
         method: "GET",    
     })
     .then(res => res.json())
@@ -74,7 +74,7 @@ class MapPage extends React.Component {
                 longitude: result.longitude,
                 location: result.city + ", " + result.region + ", " + result.country_name
             });
-            fetch("https://infinite-ocean-46338.herokuapp.com/api/location/", {
+            fetch("https://tm-location.herokuapp.com/location/", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
