@@ -75,7 +75,7 @@ class AboutPage extends React.Component {
         <hr />
         <section className="section">
             <div className="container">
-                <div className="column is-12 tile is-ancestor">
+                <div className="column is-12 tile is-ancestor wrap-info">
                     <div className="tile is-parent">
                         <article className="tile is-child notification is-dark">
                             <div className="content">
@@ -109,30 +109,26 @@ class AboutPage extends React.Component {
                             </div>
                         </article>
                     </div>
-                    <div className="tile is-vertical is-8">
-                        <div className="tile">
-                            <div className="tile is-parent is-vertical">
-                                <article className="tile is-child notification is-primary">
-                                    <p className="title">Fun Facts</p>
-                                    <p className="subtitle">Here's my name in Malayalam</p>
-                                    <p className="mal-name">&#3364;&#3399;&#3356;&#3384;&#3405;</p>
-                                    <a className="button button-show" href="https://en.wikipedia.org/wiki/Malayalam">Learn about Malayalam</a>
-                                </article>
-                                <article className="tile is-child notification is-warning">
-                                    <p className="title">Coming soon...</p>
-                                    <p className="subtitle">Things that I'll be slowly adding to the site:</p>
-                                    <div className="content">
-                                        CMS system &bull; User drawing canvas &bull; APIs for my ML projects
-                                        &bull; League stats view &bull; Better documentation
-                                    </div>
-                                </article>
+                    <div className="tile is-parent is-vertical">
+                        <article className="tile is-child notification is-primary">
+                            <p className="title">Fun Facts</p>
+                            <p className="subtitle">Here's my name in Malayalam</p>
+                            <p className="mal-name">&#3364;&#3399;&#3356;&#3384;&#3405;</p>
+                            <a className="button button-show" href="https://en.wikipedia.org/wiki/Malayalam">Learn about Malayalam</a>
+                        </article>
+                        <article className="tile is-child notification is-warning">
+                            <p className="title">Coming soon...</p>
+                            <p className="subtitle">Things that I'll be slowly adding to the site:</p>
+                            <div className="content">
+                                CMS system &bull; User drawing canvas &bull; APIs for my ML projects
+                                &bull; League stats view &bull; Better documentation
                             </div>
-                            <div className="tile is-parent is-vertical">
-                                <article className="tile is-child notification is-info">
-                                    {section}
-                                </article>
-                            </div>
-                        </div>
+                        </article>
+                    </div>
+                    <div className="tile is-parent">
+                        <article className="tile is-child notification is-info">
+                            {section}
+                        </article>
                     </div>
                 </div>
             </div>
