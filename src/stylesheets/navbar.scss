@@ -13,3 +13,9 @@
 .nav-shadow {
     box-shadow: 0 1rem 1rem rgba(0,0,0,0.05),inset 0 -1px 0 rgba(0,0,0,0.15);
 }
+
+.nav-icons {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}

@@ -7,7 +7,7 @@ class CourseBox extends React.Component {
 
         this.props.courses.forEach(course => {
             courseList.push(
-                <a class="panel-block no-select">
+                <a className="panel-block no-select">
                     {course}
                 </a>
             )
@@ -15,8 +15,8 @@ class CourseBox extends React.Component {
 
         return (
             <div className="column is-6">
-                <article class="panel is-primary courses">
-                    <p class="panel-heading">
+                <article className="panel is-primary courses">
+                    <p className="panel-heading">
                         {this.props.semester}
                     </p>
                     {courseList}

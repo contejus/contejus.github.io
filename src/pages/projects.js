@@ -20,7 +20,7 @@ let mainProjectData = [
     text: 
       "When I first built my website, I was very inexperienced in web design/programming. I had never used React, and \
       my website had a lot of problems as a result. This project is aimed at slowly improving the code quality and \
-      applying/learning the new techniques I've learned about React.",
+      applying/learning new React techniques.",
     image: website,
     url: "https://contejus.github.io/",
     reverse: true
@@ -70,10 +70,6 @@ let cardData = [
 ]
 
 class ProjectPage extends React.Component {
-  constructor(){
-    super()
-  }
-
   render() {
     // convert data to mainproject objects
     var mainProjects = [];
@@ -86,8 +82,8 @@ class ProjectPage extends React.Component {
           subtitle={card.subtitle}
           text={card.text}
           image={
-            <figure class="image">
-              <img class="has-ratio" src={card.image} />
+            <figure className="image">
+              <img className="has-ratio" src={card.image} />
             </figure>
           }
           url={card.url}
@@ -110,7 +106,7 @@ class ProjectPage extends React.Component {
       <Layout>
           {mainProjects}
           <section className="section">
-            <div class="container">
+            <div className="container">
                 <div className="columns">
                   <div className="column projects-column">
                     <h1 className="title">More Projects</h1>

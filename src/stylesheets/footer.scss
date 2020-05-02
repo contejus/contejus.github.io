@@ -9,3 +9,15 @@
 a.footer-text {
     color: white;
 }
+
+p.footer-text {
+    border-top: 1px white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-image {
+    margin-left: 0.5em;
+    margin-right: 0.5em;
+}

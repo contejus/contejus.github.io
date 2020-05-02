@@ -105,27 +105,26 @@ class MapPage extends React.Component {
     let section;
     if(!havePermission){
         section = 
-        <div className="warning-div">
-            <article class="message is-primary privacy">
-                <div class="message-header">
+        <div className="warning-div is-404">
+            <article className="message is-primary privacy">
+                <div className="message-header">
                     <p>Location Policy</p>
                 </div>
-                <div class="message-body">
+                <div className="message-body">
                     <p>
-                        This page finds location by using your IP address. It will not find your exact location, only 
-                        the general area. This location is also stored and secured in my API. Please click "Accept" if you 
-                        accept these conditions, or "Cancel" if you do not.
+                        This page finds your general (not exact) location by using your IP address and stores only the latitude and
+                        longitude in my API. Please click "Accept" if you are comfortable with this or "Cancel" to go home.
                     </p>
                 </div>
                 <div className="choice-div">
-                    <button class="button is-success" onClick={() => {this.handleClick()}}>Accept</button>
-                    <a class="button is-danger" href="/">Cancel</a>
+                    <button className="button is-success" onClick={() => {this.handleClick()}}>Accept</button>
+                    <a className="button is-danger" href="/">Cancel</a>
                 </div>
             </article>
         </div>
     } else if (isLoaded) {
       section = 
-      <div class="map-div">
+      <div className="map-div">
         <div style={{ height: '93.5vh', width: '100%' }}>
           <GoogleMapReact
             bootstrapURLKeys={
@@ -143,14 +142,14 @@ class MapPage extends React.Component {
               />
           </GoogleMapReact>
         </div>
-        <div class="location-display">
-          <button class="button is-primary" style={{leftBorderRadius: '0px'}} >You are visiting from: {this.state.location}</button>
+        <div className="location-display">
+          <button className="button is-primary" style={{leftBorderRadius: '0px'}} >You are visiting from: {this.state.location}</button>
         </div>
       </div>;
     } else {
       section = 
-        <div class="loading-button">
-            <button class="button is-primary is-loading is-large" />
+        <div className="loading-button">
+            <button className="button is-primary is-loading is-large" />
         </div>;
     }
 

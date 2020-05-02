@@ -1,0 +1,20 @@
+@charset "utf-8";
+
+@import "./styles.scss";
+
+.wrap-info {
+    flex-wrap: wrap;
+}
+
+.center-col {
+    display: flex !important;
+    justify-content: center;
+    text-align: center;
+}
+
+.tech-images {
+    height: 20vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

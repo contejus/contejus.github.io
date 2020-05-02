@@ -54,7 +54,7 @@ let data = [
 ]
 
 
-class Coursework extends React.Component {
+class CourseworkPage extends React.Component {
   render() {
     var semesters = []
 
@@ -86,4 +86,4 @@ class Coursework extends React.Component {
   }
 }
 
-export default Coursework
+export default CourseworkPage

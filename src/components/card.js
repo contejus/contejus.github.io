@@ -2,26 +2,22 @@ import React from "react";
 import "../stylesheets/card.scss";
 
 class Card extends React.Component {
-    constructor(){
-        super();
-    }
-
     render() {
         return (
             <div className="column">
-                <div class="card">
-                    <div class="card-image">
-                        <figure class="image is-4by3">
+                <div className="card">
+                    <div className="card-image">
+                        <figure className="image is-4by3">
                             <img src={this.props.image} alt="Placeholder image" />
                         </figure>
                     </div>
-                    <div class="card-content">
-                        <div class="media">
-                            <div class="media-content">
-                                <p class="title is-4">{this.props.title}</p>
+                    <div className="card-content">
+                        <div className="media">
+                            <div className="media-content">
+                                <p className="title is-4">{this.props.title}</p>
                             </div>
                         </div>
-                        <div class="content">
+                        <div className="content">
                             {this.props.content}
                             <br />
                             <br />

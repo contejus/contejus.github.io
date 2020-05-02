@@ -21,7 +21,7 @@ class MainProject extends React.Component {
                 {this.props.image}
             </div>
 
-        if (this.props.reverse == true){
+        if (this.props.reverse === true){
             left = 
                 <div className="column">
                     {this.props.image}

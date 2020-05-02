@@ -4,14 +4,21 @@
 
 $blue: 	#003366;
 $black: #4CAAA7;
+$lightblue: #36689B;
 $blueComplement: #004282;
+$accent: #66000A;
+$gold: #5B6600;
 $white: #FFFFFF;
 $background: #DAE1E9;
 
 $family-sans-serif: "Roboto", sans-serif;
 $primary: $blue;
+$dark: $lightblue;
+$warning: $accent;
+$info: $gold;
 $body-background-color: #F2F2F2;
 $footer-background-color: $blue;
+$footer-padding: 3rem 1.5rem 3rem;
 
 @import "../../node_modules/bulma/bulma.sass";
 
