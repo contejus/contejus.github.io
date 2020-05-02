@@ -38,11 +38,11 @@ class AboutPage extends React.Component {
 
     if(isDone) {
         section = 
-        <div>
+        <div className="anime-div">
             <h1 class="title">What I'm watching</h1>
             <p class="subtitle">{data[0]["title"]}</p>
             <img src={data[0]["image_url"]} width="160" height="220"/>
-            <a class="button" href={data[0]["url"]}>Check it out</a>;
+            <a class="button" href={data[0]["url"]}>Check it out</a>
         </div>
     }
 
