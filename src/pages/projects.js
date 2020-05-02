@@ -29,9 +29,9 @@ let mainProjectData = [
     title: "ResearchMatch",
     subtitle: "A tool for students to get matched to research projects",
     text: 
-      "As part of my team's senior design project, I worked on updating a 5 year old website to be usable today. This \
+      "As part of my team's senior design project, I worked on updating an older codebase to modern standards. This \
       project was really informative on real-world practices versus best practices, and it was a great \
-      learning experience to refactor spaghetti code.",
+      learning experience in refactoring quickly-written code.",
     image: researchMatch,
     url: "https://researchmatch.ece.utexas.edu/",
     reverse: false

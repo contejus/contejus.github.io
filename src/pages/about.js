@@ -22,27 +22,25 @@ class AboutPage extends React.Component {
       fetch("https://tm-location.herokuapp.com/anime")
       .then(res => res.json())
       .then(result => {
-        console.log(result);
         this.setState({
             data: result["anime"],
             done: true
         });
-        console.log(result);
       })
   }
 
   render() {
     var isDone = this.state.done;
     var data = this.state.data;
-    var section = <button class="button is-info is-large is-loading" />;
+    var section = <button className="button is-info is-large is-loading" />;
 
     if(isDone) {
         section = 
         <div className="anime-div">
-            <h1 class="title">What I'm watching</h1>
-            <p class="subtitle">{data[0]["title"]}</p>
+            <h1 className="title">What I'm watching</h1>
+            <p className="subtitle">{data[0]["title"]}</p>
             <img src={data[0]["image_url"]} width="160" height="220"/>
-            <a class="button" href={data[0]["url"]}>Check it out</a>
+            <a className="button" className="button-show" href={data[0]["url"]}>Check it out</a>
         </div>
     }
 
@@ -53,20 +51,20 @@ class AboutPage extends React.Component {
             fullscreen="" 
             subtitle=""
         />
-        <section class="section">
-            <div class="container">
+        <section className="section">
+            <div className="container">
                 <div className="columns wrap-info">
-                    <div class="column is-12 center-col">
-                        <figure class="image is-128x128">
-                            <img class="is-rounded" src={profilePic} />
+                    <div className="column is-12 center-col">
+                        <figure className="image is-128x128">
+                            <img className="is-rounded" src={profilePic} />
                         </figure>
                     </div>
-                    <div class="column is-12 center-col">
-                        <h1 class="title">I'm Tejus</h1>
+                    <div className="column is-12 center-col">
+                        <h1 className="title">I'm Tejus</h1>
                     </div>
-                    <div class="column is-12 center-col">
-                        <h2 class="subtitle">
-                            A soon-to-be <strong>software developer</strong>, focusing on learning as much as I can. <br/>
+                    <div className="column is-12 center-col">
+                        <h2 className="subtitle">
+                            A <strong>software developer</strong>, focusing on learning as much as I can. <br/>
                             I'm currently a graduating senior at The University of Texas at Austin, <br/>
                             majoring in <strong>Electrical and Computer Engineering</strong>.
                         </h2>
@@ -75,22 +73,22 @@ class AboutPage extends React.Component {
             </div>
         </section>
         <hr />
-        <section class="section">
-            <div class="container">
-                <div class="column is-12 tile is-ancestor">
-                    <div class="tile is-parent">
-                        <article class="tile is-child notification is-dark">
-                            <div class="content">
-                                <p class="title">Technologies I've worked with:</p>
-                                <dl class="subtitle">
+        <section className="section">
+            <div className="container">
+                <div className="column is-12 tile is-ancestor">
+                    <div className="tile is-parent">
+                        <article className="tile is-child notification is-dark">
+                            <div className="content">
+                                <p className="title">Technologies I've worked with:</p>
+                                <dl className="subtitle">
                                     <dt>Frontend:</dt>
                                     <dd>Gatsby, React, Bootstrap, JavaScript, HTML, CSS</dd>
                                 </dl>
-                                <dl class="subtitle">
+                                <dl className="subtitle">
                                     <dt>Backend:</dt>
                                     <dd>Node.js, Python (Flask + Django), Java</dd>
                                 </dl>
-                                <dl class="subtitle">
+                                <dl className="subtitle">
                                     <dt>Deployment (still new):</dt>
                                     <dd>Docker, Kubernetes, Helm</dd>
                                 </dl>
@@ -111,31 +109,29 @@ class AboutPage extends React.Component {
                             </div>
                         </article>
                     </div>
-                    <div class="tile is-vertical is-8">
-                        <div class="tile">
-                            <div class="tile is-parent">
-                                <article class="tile is-child notification is-primary">
-                                    <p class="title">Coming soon...</p>
-                                    <p class="subtitle">With an image</p>
-                                    <figure class="image is-4by3">
-                                        <img src="https://bulma.io/images/placeholders/640x480.png"/>
-                                    </figure>
+                    <div className="tile is-vertical is-8">
+                        <div className="tile">
+                            <div className="tile is-parent is-vertical">
+                                <article className="tile is-child notification is-primary">
+                                    <p className="title">Fun Facts</p>
+                                    <p className="subtitle">Here's my name in Malayalam</p>
+                                    <p className="mal-name">&#3364;&#3399;&#3356;&#3384;&#3405;</p>
+                                    <a className="button button-show" href="https://en.wikipedia.org/wiki/Malayalam">Learn about Malayalam</a>
+                                </article>
+                                <article className="tile is-child notification is-warning">
+                                    <p className="title">Coming soon...</p>
+                                    <p className="subtitle">Things that I'll be slowly adding to the site:</p>
+                                    <div className="content">
+                                        CMS system &bull; User drawing canvas &bull; APIs for my ML projects
+                                        &bull; League stats view &bull; Better documentation
+                                    </div>
                                 </article>
                             </div>
-                            <div class="tile is-parent is-vertical">
-                                <article class="tile is-child notification is-info">
+                            <div className="tile is-parent is-vertical">
+                                <article className="tile is-child notification is-info">
                                     {section}
                                 </article>
                             </div>
-                        </div>
-                        <div class="tile is-parent">
-                            <article class="tile is-child notification is-warning">
-                                <p class="title">Coming soon...</p>
-                                <p class="subtitle">Aligned with the right tile</p>
-                                <div class="content">
-                                    Hello
-                                </div>
-                            </article>
                         </div>
                     </div>
                 </div>

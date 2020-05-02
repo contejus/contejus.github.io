@@ -17,7 +17,7 @@ const IndexPage = () => {
           background="use-art" 
           title="Tejus Mathew" 
           fullscreen="is-fullheight" 
-          subtitle="ECE senior at The University of Texas"
+          subtitle="ECE Senior at The University of Texas"
         />
     </div>
   )
