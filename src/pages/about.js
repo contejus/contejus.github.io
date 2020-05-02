@@ -39,8 +39,8 @@ class AboutPage extends React.Component {
         <div className="anime-div">
             <h1 className="title">What I'm watching</h1>
             <p className="subtitle">{data[0]["title"]}</p>
-            <img src={data[0]["image_url"]} width="160" height="220"/>
-            <a className="button" className="button-show" href={data[0]["url"]}>Check it out</a>
+            <img src={data[0]["image_url"]} width="240" height="330"/>
+            <a className="button button-show" href={data[0]["url"]}>Check it out</a>
         </div>
     }
 
