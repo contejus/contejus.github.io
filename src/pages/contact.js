@@ -41,9 +41,10 @@ const ContactPage = () => {
                         </div>
                         <div className="column is-3">
                         <a href="mailto:tejusmathew@utexas.edu">
-                            <svg className="bi bi-chat-fill" width="3em" height="3em" viewBox="0 0 16 16" fill="white" xmlns="http://www.w3.org/2000/svg">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="3em" height="3em" viewBox="0 0 24 24" fill="white" >
+                                <path d="M0 0h24v24H0V0z" fill="none"/>
                                 <title>Email</title>
-                                <path d="M8 15c4.418 0 8-3.134 8-7s-3.582-7-8-7-8 3.134-8 7c0 1.76.743 3.37 1.97 4.6-.097 1.016-.417 2.13-.771 2.966-.079.186.074.394.273.362 2.256-.37 3.597-.938 4.18-1.234A9.06 9.06 0 008 15z"/>
+                                <path d="M22 6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6zm-2 0l-8 5-8-5h16zm0 12H4V8l8 5 8-5v10z"/>
                             </svg>
                             <h3 className="subtitle">
                                 Email
@@ -52,10 +53,10 @@ const ContactPage = () => {
                         </div>
                         <div className="column is-3">
                         <a rel="noopener noreferrer" href="https://drive.google.com/file/d/1UF3lEhhazeLtPX7F0nHyFXuvd_WYmOqk/view?usp=sharing" target="_blank">
-                            <svg className="bi bi-file-earmark" width="3em" height="3em" viewBox="0 0 16 16" fill="white" xmlns="http://www.w3.org/2000/svg">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="3em" height="3em" viewBox="0 0 24 24" fill="white" >
+                                <path d="M0 0h24v24H0V0z" fill="none"/>
                                 <title>Resume</title>
-                                <path d="M4 1h5v1H4a1 1 0 00-1 1v10a1 1 0 001 1h8a1 1 0 001-1V6h1v7a2 2 0 01-2 2H4a2 2 0 01-2-2V3a2 2 0 012-2z"/>
-                                <path d="M9 4.5V1l5 5h-3.5A1.5 1.5 0 019 4.5z"/>
+                                <path d="M8 16h8v2H8zm0-4h8v2H8zm6-10H6c-1.1 0-2 .9-2 2v16c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm4 18H6V4h7v5h5v11z"/>
                             </svg>
                             <h3 className="subtitle">
                                 Resume
@@ -63,7 +64,13 @@ const ContactPage = () => {
                         </a>
                         </div>
                     </div>
-                    <a className="button is-light is-outline" href="/" >Go home</a>
+                    <a className="button is-light is-outline" href="/" >
+                        <svg className="bi bi-house-door home-button" width="1.5em" height="1.5em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" d="M7.646 1.146a.5.5 0 01.708 0l6 6a.5.5 0 01.146.354v7a.5.5 0 01-.5.5H9.5a.5.5 0 01-.5-.5v-4H7v4a.5.5 0 01-.5.5H2a.5.5 0 01-.5-.5v-7a.5.5 0 01.146-.354l6-6zM2.5 7.707V14H6v-4a.5.5 0 01.5-.5h3a.5.5 0 01.5.5v4h3.5V7.707L8 2.207l-5.5 5.5z" clip-rule="evenodd"/>
+                            <path fill-rule="evenodd" d="M13 2.5V6l-2-2V2.5a.5.5 0 01.5-.5h1a.5.5 0 01.5.5z" clip-rule="evenodd"/>
+                        </svg>
+                        Go home
+                    </a>
                 </div>
             </div>
             </section>

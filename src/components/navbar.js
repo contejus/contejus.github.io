@@ -72,16 +72,17 @@ class Navbar extends React.Component {
                             </svg>
                         </a>
                         <a className="navbar-item" rel="noopener noreferrer" href="mailto:tejusmathew@utexas.edu" target="_blank">
-                            <svg className="bi bi-chat-fill" width="2em" height="2em" viewBox="0 0 16 16" fill={this.state.isOpen? 'black' : 'white'} xmlns="http://www.w3.org/2000/svg">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" viewBox="0 0 24 24" fill={this.state.isOpen? 'black' : 'white'} >
+                                <path d="M0 0h24v24H0V0z" fill="none"/>
                                 <title>Email</title>
-                                <path d="M8 15c4.418 0 8-3.134 8-7s-3.582-7-8-7-8 3.134-8 7c0 1.76.743 3.37 1.97 4.6-.097 1.016-.417 2.13-.771 2.966-.079.186.074.394.273.362 2.256-.37 3.597-.938 4.18-1.234A9.06 9.06 0 008 15z"/>
+                                <path d="M22 6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6zm-2 0l-8 5-8-5h16zm0 12H4V8l8 5 8-5v10z"/>
                             </svg>
                         </a>
                         <a className="navbar-item" rel="noopener noreferrer" href="https://drive.google.com/file/d/1UF3lEhhazeLtPX7F0nHyFXuvd_WYmOqk/view?usp=sharing" target="_blank">
-                            <svg className="bi bi-file-earmark" width="2em" height="2em" viewBox="0 0 16 16" fill={this.state.isOpen? 'black' : 'white'} xmlns="http://www.w3.org/2000/svg">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" viewBox="0 0 24 24" fill={this.state.isOpen? 'black' : 'white'} >
+                                <path d="M0 0h24v24H0V0z" fill="none"/>
                                 <title>Resume</title>
-                                <path d="M4 1h5v1H4a1 1 0 00-1 1v10a1 1 0 001 1h8a1 1 0 001-1V6h1v7a2 2 0 01-2 2H4a2 2 0 01-2-2V3a2 2 0 012-2z"/>
-                                <path d="M9 4.5V1l5 5h-3.5A1.5 1.5 0 019 4.5z"/>
+                                <path d="M8 16h8v2H8zm0-4h8v2H8zm6-10H6c-1.1 0-2 .9-2 2v16c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm4 18H6V4h7v5h5v11z"/>
                             </svg>
                         </a>
                     </div>
