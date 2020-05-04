@@ -41,13 +41,15 @@ class MapPage extends React.Component {
         location: [],
         prevLocations: [],
         done: false,
-        permission: false
+        permission: false,
+        gotPrevLocations: false,
+        gotUserLocation: false
     }
   }  
 
   getLocations() {
     // get locations from API
-    fetch("https://tm-location.herokuapp.com/location", {
+    fetch("https://tm-location.herokuapp.com/location/", {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
@@ -68,35 +70,38 @@ class MapPage extends React.Component {
                     text="User"
                 />
             )
-        });
-
-        // look up new location and then store in API
-        fetch("https://json.geoiplookup.io")
-            .then(res => res.json())
-            .then(result => {
             this.setState({
-                latitude: result.latitude,
-                longitude: result.longitude,
-                location: result.city + ", " + result.region + ", " + result.country_name
-            });
-            fetch("https://tm-location.herokuapp.com/location/", {
-                method: "POST",
-                headers: {
-                  "Content-Type": "application/json",
-                  'Accept': 'application/json',
-                  'Authorization': 'Basic ' + 'Y2xpZW50OjV4SkNnQlJWeXU4NkdIaw==',
-                },
-                body: JSON.stringify({
-                "latitude": (this.state.latitude),
-                "longitude": (this.state.longitude)
-                }),      
+              gotPrevLocations: true
             })
-            this.setState({
-                done: true
-            });
-            })  
-    }  
-    )
+    });})
+
+    // look up new location
+    fetch("https://json.geoiplookup.io")
+    .then(res => res.json())
+    .then(result => {
+        this.setState({
+            latitude: result.latitude,
+            longitude: result.longitude,
+            location: result.city + ", " + result.region + ", " + result.country_name,
+            gotUserLocation: true
+        });
+    })
+  }
+
+  addLocation(){
+    // store new user location to API
+    fetch("https://tm-location.herokuapp.com/location/", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        'Accept': 'application/json',
+        'Authorization': 'Basic ' + 'Y2xpZW50OjV4SkNnQlJWeXU4NkdIaw==',
+      },
+      body: JSON.stringify({
+      "latitude": (this.state.latitude),
+      "longitude": (this.state.longitude)
+      }),      
+    })
   }
 
   handleClick(){
@@ -104,11 +109,13 @@ class MapPage extends React.Component {
             permission: true
         });
         this.getLocations();
-    }
+  }
 
   render() {
-    const isLoaded = this.state.done;
+    const gotPrevLocations = this.state.gotPrevLocations;
+    const gotUserLocation = this.state.gotUserLocation;
     const havePermission = this.state.permission;
+
     let section;
     if(!havePermission){
         section = 
@@ -129,7 +136,8 @@ class MapPage extends React.Component {
                 </div>
             </article>
         </div>
-    } else if (isLoaded) {
+    } else if (gotPrevLocations && gotUserLocation) {
+      this.addLocation();
       section = 
       <div className="map-div">
         <div style={{ height: '93.5vh', width: '100%' }}>
