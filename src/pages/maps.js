@@ -47,8 +47,13 @@ class MapPage extends React.Component {
 
   getLocations() {
     // get locations from API
-    fetch("https://tm-location.herokuapp.com/location/", {
-        method: "GET",    
+    fetch("https://tm-location.herokuapp.com/location", {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          'Accept': 'application/json',
+          'Authorization': 'Basic ' + 'Y2xpZW50OjV4SkNnQlJWeXU4NkdIaw==',
+        }, 
     })
     .then(res => res.json())
     .then(result2 => {
@@ -77,12 +82,14 @@ class MapPage extends React.Component {
             fetch("https://tm-location.herokuapp.com/location/", {
                 method: "POST",
                 headers: {
-                    "Content-Type": "application/json",
+                  "Content-Type": "application/json",
+                  'Accept': 'application/json',
+                  'Authorization': 'Basic ' + 'Y2xpZW50OjV4SkNnQlJWeXU4NkdIaw==',
                 },
                 body: JSON.stringify({
                 "latitude": (this.state.latitude),
                 "longitude": (this.state.longitude)
-                })      
+                }),      
             })
             this.setState({
                 done: true
