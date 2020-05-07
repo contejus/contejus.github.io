@@ -29,7 +29,7 @@ class MapPage extends React.Component {
       lng: 0
     },
     zoom: 0,
-    key: 'AIzaSyCQuo1OKiBqgURMSaSFpcxSrwMHjgCuLag',
+    key: 'AIzaSyAfvwFXbPQ3ObSxNgIoJQ9aoAK1hDo3t7o',
     items: []
   };
 
@@ -54,7 +54,7 @@ class MapPage extends React.Component {
         headers: {
           "Content-Type": "application/json",
           'Accept': 'application/json',
-          'Authorization': 'Basic ' + 'Y2xpZW50OjV4SkNnQlJWeXU4NkdIaw==',
+          'Authorization': 'Basic ' + 'Y2xpZW50Oms2QTJ3aWppZHBzY1kzaw==',
         }, 
     })
     .then(res => res.json())
@@ -95,7 +95,7 @@ class MapPage extends React.Component {
       headers: {
         "Content-Type": "application/json",
         'Accept': 'application/json',
-        'Authorization': 'Basic ' + 'Y2xpZW50OjV4SkNnQlJWeXU4NkdIaw==',
+        'Authorization': 'Basic ' + 'Y2xpZW50Oms2QTJ3aWppZHBzY1kzaw==',
       },
       body: JSON.stringify({
       "latitude": (this.state.latitude),
