@@ -6,7 +6,7 @@ import GoogleMapReact from 'google-map-react';
 
 import "../stylesheets/maps.scss"
 
-const AnyReactComponent = ({ text }) => (
+const Circle = ({ text }) => (
   <div style={{
     color: 'white', 
     background: '#003366',
@@ -29,7 +29,7 @@ class MapPage extends React.Component {
       lng: 0
     },
     zoom: 0,
-    key: 'AIzaSyAfvwFXbPQ3ObSxNgIoJQ9aoAK1hDo3t7o',
+    key: 'AIzaSyAgeMf2wsomCk45C0JsatuRdgyy7NgYVEc',
     items: []
   };
 
@@ -64,7 +64,7 @@ class MapPage extends React.Component {
         });
         this.state.prevLocations.forEach ( location => {
             this.props.items.push(
-            <AnyReactComponent
+            <Circle
                     lat={location['latitude']}
                     lng={location['longitude']}
                     text="User"
@@ -149,7 +149,7 @@ class MapPage extends React.Component {
             defaultZoom={this.props.zoom}
           >
             {this.props.items}
-            <AnyReactComponent
+            <Circle
               lat={this.state.latitude}
               lng={this.state.longitude}
               text="You"
