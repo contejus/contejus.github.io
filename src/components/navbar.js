@@ -51,9 +51,12 @@ class Navbar extends React.Component {
                                 <a className="navbar-item" href="/about">
                                     About Me
                                 </a>
-                                <hr className="navbar-divider"/>
                                 <a className="navbar-item" href="/contact">
                                     Contact Me
+                                </a>
+                                <hr className="navbar-divider"/>
+                                <a className="navbar-item" href="https://contejus.github.io/repo">
+                                    Cydia Repo
                                 </a>
                             </div>
                         </div>
