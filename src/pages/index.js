@@ -23,7 +23,7 @@ class IndexPage extends React.Component {
           <Jumbotron 
             background="use-art" 
             title="Tejus Mathew" 
-            fullscreen="is-fullheight" 
+            fullscreen="is-fullheight-with-navbar" 
             subtitle="ECE Senior at The University of Texas"
           />
       </div>
