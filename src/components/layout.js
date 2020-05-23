@@ -4,14 +4,12 @@ import { Helmet } from "react-helmet"
 import "../stylesheets/layout.scss"
 import Navbar from "./navbar.js";
 import Footer from "./footer.js"
-import SEO from "./seo.js"
 
 class Layout extends React.Component {
     render() {
         return (
-           <React.Fragment>
+           <div>
                <Helmet>
-                    <SEO />
                     <meta charSet="utf-8" />
                     <title>Tejus Mathew</title>
                     <link rel="canonical" href="http://contejus.github.io" />
@@ -19,7 +17,7 @@ class Layout extends React.Component {
                <Navbar />
                {this.props.children}
                <Footer />
-           </React.Fragment>
+           </div>
         )
     }
 }

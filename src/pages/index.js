@@ -2,7 +2,6 @@ import React from "react"
 import { Helmet } from "react-helmet"
 import Navbar from "../components/navbar.js"
 import Jumbotron from "../components/jumbotron.js"
-import SEO from "../components/seo.js"
 import "../stylesheets/styles.scss"
 
 class IndexPage extends React.Component {
@@ -14,9 +13,8 @@ class IndexPage extends React.Component {
 
   render(){
     return (
-      <React.Fragment>
+      <div>
           <Helmet>
-            <SEO />
             <meta charSet="utf-8" />
             <title>Tejus Mathew</title>
             <link rel="canonical" href="http://contejus.github.io" />
@@ -28,7 +26,7 @@ class IndexPage extends React.Component {
             fullscreen="is-fullheight-with-navbar" 
             subtitle="ECE Senior at The University of Texas"
           />
-      </React.Fragment>
+      </div>
     )
   }
 }
