@@ -36,7 +36,6 @@ module.exports = {
     },
     {
       resolve: "gatsby-plugin-no-sourcemaps",
-    },
-    'gatsby-plugin-offline'
+    }
   ]
 }
