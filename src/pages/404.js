@@ -2,11 +2,13 @@ import React from "react"
 import { Helmet } from "react-helmet"
 
 import "../stylesheets/404.scss"
+import SEO from "../components/seo.js"
 
 const PageNotFound = () => {
   return (
-      <div>
+    <React.Fragment>
         <Helmet>
+          <SEO />
           <meta charSet="utf-8" />
           <title>Tejus Mathew</title>
           <link rel="canonical" href="http://contejus.github.io" />
@@ -24,7 +26,7 @@ const PageNotFound = () => {
               </div>
           </div>
         </section>
-    </div>
+    </React.Fragment>
   )
 }
 

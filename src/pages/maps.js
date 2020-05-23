@@ -3,6 +3,7 @@ import { Helmet } from "react-helmet"
 
 import Navbar from "../components/navbar.js"
 import GoogleMapReact from 'google-map-react';
+import SEO from "../components/seo.js"
 
 import "../stylesheets/maps.scss"
 
@@ -169,15 +170,16 @@ class MapPage extends React.Component {
     }
 
     return (
-      <div>
+      <React.Fragment>
         <Helmet>
-            <meta charSet="utf-8" />
-            <title>Tejus Mathew</title>
-            <link rel="canonical" href="http://contejus.github.io" />
+          <SEO />
+          <meta charSet="utf-8" />
+          <title>Tejus Mathew</title>
+          <link rel="canonical" href="http://contejus.github.io" />
         </Helmet>
         <Navbar />
         {section}
-      </div>
+      </React.Fragment>
     );
   }
 }
