@@ -6,7 +6,7 @@
 
 [Bulma](https://bulma.io/)
 
-[Sass Setup](https://github.com/sass/node-sass)
+[Sass Setup](https://sass-lang.com/install)
 
 ## Installation steps
 
@@ -22,7 +22,7 @@
 
 ## To-Do
 
-1. Migrate from `node-sass` to `sass` (dart-sass) to avoid having to install Visual C++ Build Tools
+~1. Migrate from `node-sass` to `sass` (dart-sass) to avoid having to install Visual C++ Build Tools~
 
 2. Add CMS for dynamic rendering of page content (Strapi/Ghost)
 
