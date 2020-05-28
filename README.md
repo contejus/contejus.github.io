@@ -10,6 +10,8 @@
 
 ## Installation steps
 
+This project was initially developed using Node.js + Gatsby on Windows. However, development is mostly on my Debian WSL 2 implementation to avoid having to install the 7 GB+ Visual C++ Build Tools used by `gatsby-image-sharp`(?) and `node-sass`(?). 
+
 1. Install Gatsby using `npm install -g gatsby-cli`
 
 2. Cd into repository root (this dir should contain a package.json file when running `ls`)
