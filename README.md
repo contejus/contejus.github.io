@@ -18,7 +18,7 @@ This project was initially developed using Node.js + Gatsby on Windows. However,
 
 3. Run `npm install` and `npm upgrade`
 
-4. To run locally, enter `gatsby develop`
+4. To run locally, enter `gatsby develop` or `npm run develop`
 
 5. To deploy to production, enter `npm run deploy`
 
