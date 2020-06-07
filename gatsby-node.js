@@ -25,9 +25,9 @@ exports.sourceNodes = async ({ boundActionCreators }) => {
     .update(JSON.stringify(summonerData))
     .digest(`hex`);
 
-    summonerData.internal.contentDigest = userContentDigest;
+  summonerData.internal.contentDigest = userContentDigest;
 
-    createNode(summonerData);
+  createNode(summonerData);
 
   res.data.matches.map((match) => {
     // Create your node object
@@ -40,6 +40,7 @@ exports.sourceNodes = async ({ boundActionCreators }) => {
       },
       // Other fields that you want to query with graphQl
       champion: match.champion,
+      kda: match.kda,
       map: match.queue.map,
       gameType: match.queue.description,
       win: match.win,
