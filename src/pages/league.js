@@ -64,48 +64,47 @@ class LeaguePage extends React.Component {
                                         </div>
                                     </div>
                                     <hr />
-                                    <div class="tile is-ancestor">
-                                        <div class="tile is-parent is-vertical">
+                                    <div className="tile is-ancestor">
+                                        <div className="tile is-parent is-vertical">
                                             {data.allLeagueMatch.edges.map((matchNode) => {
                                                 const match = matchNode.node;
                                                 return (
-                                                    // TODO: Add component here
                                                     <article className={`allPadding tile is-child ${match.win? ' has-background-success' : 'has-background-danger'}`}>
-                                                        <div class="content matchStat columns">
-                                                            <div class="column is-4 is-full-mobile">
-                                                                <div class="columns is-mobile">
-                                                                    <div class="column is-6 is-flex centerFlex">
-                                                                        <p class="winLoss">{`${match.win? 'Win' : 'Loss'}`}</p>
+                                                        <div className="content matchStat columns">
+                                                            <div className="column is-4 is-full-mobile">
+                                                                <div className="columns is-mobile">
+                                                                    <div className="column is-6 is-flex centerFlex">
+                                                                        <p className="winLoss">{`${match.win? 'Win' : 'Loss'}`}</p>
                                                                     </div>
-                                                                    <div class="column is-6 is-flex centerFlex wrap">
-                                                                        <figure className="image is-256x256 champImg is-flex centerFlex">
+                                                                    <div className="column is-6 is-flex centerFlex wrap flexCol">
+                                                                        <figure className="image is-256x256">
                                                                             <img className="is-rounded" src={championUrl + match.champion + ".png"} />
                                                                         </figure>
-                                                                        <p class="leagueTitle">{match.champion}</p>
+                                                                        <p className="leagueTitle">{match.champion}</p>
                                                                     </div>
                                                                 </div>
                                                             </div>
-                                                            <div class="column is-4 is-full-mobile">
-                                                                <div class="columns is-mobile">
-                                                                    <div class="column is-6">
-                                                                        <p class="leagueTitle">K/D/A</p>
-                                                                        <p class="leagueSubtitle">{match.kda}</p>
+                                                            <div className="column is-4 is-full-mobile">
+                                                                <div className="columns is-mobile">
+                                                                    <div className="column is-6">
+                                                                        <p className="leagueTitle">K/D/A</p>
+                                                                        <p className="leagueSubtitle">{match.kda}</p>
                                                                     </div>
-                                                                    <div class="column is-6">
-                                                                        <p class="leagueTitle">Map</p>
-                                                                        <p class="leagueSubtitle">{match.map}</p>
+                                                                    <div className="column is-6">
+                                                                        <p className="leagueTitle">Map</p>
+                                                                        <p className="leagueSubtitle">{match.map}</p>
                                                                     </div>
                                                                 </div>
                                                             </div>
-                                                            <div class="column is-4 is-full-mobile">
-                                                                <div class="columns is-mobile">
-                                                                    <div class="column is-6">
-                                                                        <p class="leagueTitle">Game Type</p>
-                                                                        <p class="leagueSubtitle">{match.gameType}</p>
+                                                            <div className="column is-4 is-full-mobile">
+                                                                <div className="columns is-mobile">
+                                                                    <div className="column is-6">
+                                                                        <p className="leagueTitle">Game Type</p>
+                                                                        <p className="leagueSubtitle">{match.gameType}</p>
                                                                     </div>
-                                                                    <div class="column is-6">
-                                                                        <p class="leagueTitle">Game Length</p>
-                                                                        <p class="leagueSubtitle">{String(Math.floor(match.length / 60)) + ":" + String('0' + Math.floor(match.length % 60)).slice(-2)}</p>
+                                                                    <div className="column is-6">
+                                                                        <p className="leagueTitle">Game Length</p>
+                                                                        <p className="leagueSubtitle">{String(Math.floor(match.length / 60)) + ":" + String('0' + Math.floor(match.length % 60)).slice(-2)}</p>
                                                                     </div>
                                                                 </div>
                                                             </div>
