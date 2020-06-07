@@ -1,5 +1,6 @@
 import React from "react"
 import { Helmet } from "react-helmet"
+import { StaticQuery, graphql } from "gatsby"
 
 import Navbar from "../components/navbar.js"
 import GoogleMapReact from 'google-map-react';
@@ -42,38 +43,37 @@ class MapPage extends React.Component {
         prevLocations: [],
         done: false,
         permission: false,
-        gotPrevLocations: false,
         gotUserLocation: false
     }
   }  
 
   getLocations() {
     // get locations from API
-    fetch("https://tm-location.herokuapp.com/location/", {
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-          'Accept': 'application/json',
-          'Authorization': 'Basic ' + 'Y2xpZW50Oms2QTJ3aWppZHBzY1kzaw==',
-        }, 
-    })
-    .then(res => res.json())
-    .then(result2 => {
-        this.setState({
-            prevLocations: result2,
-        });
-        this.state.prevLocations.forEach ( location => {
-            this.props.items.push(
-            <Circle
-                    lat={location['latitude']}
-                    lng={location['longitude']}
-                    text="User"
-                />
-            )
-            this.setState({
-              gotPrevLocations: true
-            })
-    });})
+    // fetch("https://tm-location.herokuapp.com/location/", {
+    //     method: "GET",
+    //     headers: {
+    //       "Content-Type": "application/json",
+    //       'Accept': 'application/json',
+    //       'Authorization': 'Basic ' + 'Y2xpZW50Oms2QTJ3aWppZHBzY1kzaw==',
+    //     }, 
+    // })
+    // .then(res => res.json())
+    // .then(result2 => {
+    //     this.setState({
+    //         prevLocations: result2,
+    //     });
+    //     this.state.prevLocations.forEach ( location => {
+    //         this.props.items.push(
+    //         <Circle
+    //                 lat={location['latitude']}
+    //                 lng={location['longitude']}
+    //                 text="User"
+    //             />
+    //         )
+    //         this.setState({
+    //           gotPrevLocations: true
+    //         })
+    // });})
 
     // look up new location
     fetch("https://json.geoiplookup.io")
@@ -105,14 +105,13 @@ class MapPage extends React.Component {
   }
 
   handleClick(){
-        this.setState({
-            permission: true
-        });
-        this.getLocations();
+    this.setState({
+        permission: true
+    });
+    this.getLocations();
   }
 
   render() {
-    const gotPrevLocations = this.state.gotPrevLocations;
     const gotUserLocation = this.state.gotUserLocation;
     const havePermission = this.state.permission;
 
@@ -136,7 +135,7 @@ class MapPage extends React.Component {
                 </div>
             </article>
         </div>
-    } else if (gotPrevLocations && gotUserLocation) {
+    } else if (gotUserLocation) {
       this.addLocation();
       section = 
       <div className="map-div">
@@ -148,7 +147,36 @@ class MapPage extends React.Component {
             defaultCenter={this.props.center}
             defaultZoom={this.props.zoom}
           >
-            {this.props.items}
+            <StaticQuery
+                    query= {
+                        graphql`
+                            query LocationData {
+                              allLocation {
+                                edges {
+                                  node {
+                                    latitude
+                                    longitude
+                                  }
+                                }
+                              }
+                            }  
+                        `
+                    }
+                    render= {
+                        data => (
+                            data.allLocation.edges.map((locationNode) => {
+                              const location = locationNode.node;
+                              return (
+                                <Circle
+                                    lat={location['latitude']}
+                                    lng={location['longitude']}
+                                    text="User"
+                                />
+                              )
+                          }
+                        ))
+                    }
+                />
             <Circle
               lat={this.state.latitude}
               lng={this.state.longitude}

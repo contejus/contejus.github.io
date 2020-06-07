@@ -4,8 +4,50 @@ const crypto = require('crypto');
 exports.sourceNodes = async ({ boundActionCreators }) => {
   const { createNode } = boundActionCreators;
 
-  // fetch raw data from the randomuser api
-  const fetchLeagueData = () => axios.get(`https://tm-location.herokuapp.com/league`);
+  // LOCATION API GRAPHQL CALLS FOR MAPS.JS
+  const fetchLocationData = () => axios.get(`https://tm-location.herokuapp.com/location/`, {
+    auth: {
+      username: 'client',
+      password: 'k6A2wijidpscY3k'
+    }
+  }
+  );
+  // await for results
+  const locationRes = await fetchLocationData();
+  
+  locationRes.data.map((location) => {
+    // Create your node object
+    const locationNode = {
+      // Required fields
+      id: `${String(location.latitude) + "," + String(location.longitude)}`,
+      parent: `__SOURCE__`,
+      internal: {
+        type: `location`
+      },
+      // Other fields that you want to query with graphQl
+      latitude: location.latitude,
+      longitude: location.longitude
+    }
+
+    // Get content digest of node. (Required field)
+    const contentDigest = crypto
+      .createHash(`md5`)
+      .update(JSON.stringify(locationNode))
+      .digest(`hex`);
+    // add it to matchNode
+    locationNode.internal.contentDigest = contentDigest;
+
+    createNode(locationNode);
+  });
+
+  // LEAGUE API GRAPHQL CALLS FOR LEAGUE.JS
+  const fetchLeagueData = () => axios.get(`https://tm-location.herokuapp.com/league`, {
+    auth: {
+      username: 'client',
+      password: 'k6A2wijidpscY3k'
+    }
+  }
+  );
   // await for results
   const res = await fetchLeagueData();
 
