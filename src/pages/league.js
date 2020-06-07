@@ -23,7 +23,7 @@ class LeaguePage extends React.Component {
                 <StaticQuery
                     query= {
                         graphql`
-                            query {
+                            query LeagueData {
                                 allLeagueMatch {
                                     edges {
                                         node {
@@ -71,39 +71,29 @@ class LeaguePage extends React.Component {
                                                 return (
                                                     // TODO: Add component here
                                                     <article className={`leagueTile tile is-child is-12 ${match.win? ' has-background-success' : 'has-background-danger'}`}>
-                                                        <div class="leagueContent content columns">
-                                                            <div class="column">
-                                                                <div class="leagueContent">
-                                                                    <p class="leagueTitle">{`${match.win? 'Win' : 'Loss'}`}</p>
-                                                                </div>
+                                                        <div class="leagueContent content">
+                                                            <div class="leagueContent">
+                                                                <p class="leagueTitle">{`${match.win? 'Win' : 'Loss'}`}</p>
                                                             </div>
-                                                            <div class="column">
-                                                                <div class="columns champCols">
-                                                                    <div class="column">
-                                                                        <figure className="image is-96x96">
-                                                                            <img className="is-rounded" src={championUrl + match.champion + ".png"} />
-                                                                        </figure>
-                                                                    </div>
-                                                                    <div class="column">
-                                                                        <div class="leagueContent">
-                                                                            <p class="leagueTitle">{match.champion}</p>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
+                                                            <div class="pb2pt2 flexCC">
+                                                                <figure className="champImg image is-96x96">
+                                                                    <img className="is-rounded" src={championUrl + match.champion + ".png"} />
+                                                                </figure>
+                                                                <p class="leagueTitle">{match.champion}</p>
                                                             </div>
-                                                            <div class="column">
+                                                            <div class="pb2pt2">
                                                                 <p class="leagueTitle">K/D/A</p>
                                                                 <p class="leagueSubtitle">{match.kda}</p>
                                                             </div>
-                                                            <div class="column">
+                                                            <div class="pb2pt2">
                                                                 <p class="leagueTitle">Map</p>
                                                                 <p class="leagueSubtitle">{match.map}</p>
                                                             </div>
-                                                            <div class="column">
+                                                            <div class="pb2pt2">
                                                                 <p class="leagueTitle">Game Type</p>
                                                                 <p class="leagueSubtitle">{match.gameType}</p>
                                                             </div>
-                                                            <div class="column">
+                                                            <div class="pb2pt2">
                                                                 <p class="leagueTitle">Game Length</p>
                                                                 <p class="leagueSubtitle">{String(Math.floor(match.length / 60)) + ":" + String('0' + Math.floor(match.length % 60)).slice(-2)}</p>
                                                             </div>
