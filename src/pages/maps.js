@@ -30,8 +30,7 @@ class MapPage extends React.Component {
       lng: 0
     },
     zoom: 0,
-    key: 'AIzaSyAgeMf2wsomCk45C0JsatuRdgyy7NgYVEc',
-    items: []
+    key: 'AIzaSyAgeMf2wsomCk45C0JsatuRdgyy7NgYVEc'
   };
 
   constructor() {
@@ -40,41 +39,12 @@ class MapPage extends React.Component {
         latitude: [],
         longitude: [],
         location: [],
-        prevLocations: [],
-        done: false,
         permission: false,
         gotUserLocation: false
     }
   }  
 
-  getLocations() {
-    // get locations from API
-    // fetch("https://tm-location.herokuapp.com/location/", {
-    //     method: "GET",
-    //     headers: {
-    //       "Content-Type": "application/json",
-    //       'Accept': 'application/json',
-    //       'Authorization': 'Basic ' + 'Y2xpZW50Oms2QTJ3aWppZHBzY1kzaw==',
-    //     }, 
-    // })
-    // .then(res => res.json())
-    // .then(result2 => {
-    //     this.setState({
-    //         prevLocations: result2,
-    //     });
-    //     this.state.prevLocations.forEach ( location => {
-    //         this.props.items.push(
-    //         <Circle
-    //                 lat={location['latitude']}
-    //                 lng={location['longitude']}
-    //                 text="User"
-    //             />
-    //         )
-    //         this.setState({
-    //           gotPrevLocations: true
-    //         })
-    // });})
-
+  getLocation() {
     // look up new location
     fetch("https://json.geoiplookup.io")
     .then(res => res.json())
@@ -108,16 +78,16 @@ class MapPage extends React.Component {
     this.setState({
         permission: true
     });
-    this.getLocations();
+    this.getLocation();
   }
 
   render() {
     const gotUserLocation = this.state.gotUserLocation;
     const havePermission = this.state.permission;
-
     let section;
+
     if(!havePermission){
-        section = 
+      section = 
         <div className="warning-div is-404">
             <article className="message is-primary privacy">
                 <div className="message-header">
@@ -138,57 +108,58 @@ class MapPage extends React.Component {
     } else if (gotUserLocation) {
       this.addLocation();
       section = 
-      <div className="map-div">
-        <div style={{ height: '93.5vh', width: '100%' }}>
-          <GoogleMapReact
-            bootstrapURLKeys={
-                  { key: this.props.key}
-              }
-            defaultCenter={this.props.center}
-            defaultZoom={this.props.zoom}
-          >
+        <div className="map-div">
+          <div style={{ height: '93.5vh', width: '100%' }}>
             <StaticQuery
-                    query= {
-                        graphql`
-                            query LocationData {
-                              allLocation {
-                                edges {
-                                  node {
-                                    latitude
-                                    longitude
-                                  }
-                                }
-                              }
-                            }  
-                        `
-                    }
-                    render= {
-                        data => (
-                            data.allLocation.edges.map((locationNode) => {
-                              const location = locationNode.node;
-                              return (
-                                <Circle
-                                    lat={location['latitude']}
-                                    lng={location['longitude']}
-                                    text="User"
-                                />
-                              )
+              query= {
+                graphql`
+                    query LocationData {
+                      allLocation {
+                        edges {
+                          node {
+                            latitude
+                            longitude
                           }
-                        ))
-                    }
-                />
-            <Circle
-              lat={this.state.latitude}
-              lng={this.state.longitude}
-              text="You"
-              style={{background: 'blue'}}
-              />
-          </GoogleMapReact>
-        </div>
-        <div className="location-display">
-          <button className="button is-primary" style={{leftBorderRadius: '0px'}} >You are visiting from: {this.state.location}</button>
-        </div>
-      </div>;
+                        }
+                      }
+                    }  
+                `
+              }
+              render= {
+                data => (
+                  <React.Fragment>
+                    <GoogleMapReact
+                      bootstrapURLKeys={
+                            { key: this.props.key}
+                        }
+                      defaultCenter={this.props.center}
+                      defaultZoom={this.props.zoom}
+                    >
+                      {data.allLocation.edges.map((locationNode) => {
+                          const location = locationNode.node;
+                          return (
+                            <Circle
+                                lat={location['latitude']}
+                                lng={location['longitude']}
+                                text="User"
+                            />
+                          )
+                      })}
+                      <Circle
+                        lat={this.state.latitude}
+                        lng={this.state.longitude}
+                        text="You"
+                        style={{background: 'blue'}}
+                        />
+                    </GoogleMapReact>
+                  </React.Fragment>
+              )}
+            />
+          </div>
+          <div className="location-display">
+            <button className="button is-primary" style={{leftBorderRadius: '0px'}} >You are visiting from: {this.state.location}</button>
+          </div>
+        </div>;
     } else {
       section = 
         <div className="loading-button">
