@@ -10,40 +10,7 @@ import profilePic from "../images/profile-pic.png"
 import "../stylesheets/about.scss"
 
 class AboutPage extends React.Component {
-  constructor(){
-      super();
-      this.state = {
-          data: null,
-          done: false
-      }
-  }
-
-  componentDidMount(){
-      fetch("https://tm-location.herokuapp.com/anime")
-      .then(res => res.json())
-      .then(result => {
-        this.setState({
-            data: result["anime"],
-            done: true
-        });
-      })
-  }
-
   render() {
-    var isDone = this.state.done;
-    var data = this.state.data;
-    var section = <button className="button is-info is-large is-loading" />;
-
-    if(isDone) {
-        section = 
-        <div className="anime-div">
-            <h1 className="title">What I'm watching</h1>
-            <p className="subtitle">{data[0]["title"]}</p>
-            <img src={data[0]["image_url"]} width="240" height="330"/>
-            <a className="button button-show" href={data[0]["url"]}>Check it out</a>
-        </div>
-    }
-
     return (
       <Layout>
         <Jumbotron 
@@ -127,7 +94,12 @@ class AboutPage extends React.Component {
                     </div>
                     <div className="tile is-parent">
                         <article className="tile is-child notification is-info">
-                            {section}
+                            <div className="anime-div">
+                                <h1 className="title">What I'm watching</h1>
+                                <p className="subtitle">Kaguya-sama wa Kokurasetai?: Tensai-tachi no Renai Zunousen</p>
+                                <img src="https://cdn.myanimelist.net/images/anime/1764/106659.jpg" width="240" height="330"/>
+                                <a className="button button-show" href="https://myanimelist.net/anime/40591/Kaguya-sama_wa_Kokurasetai__Tensai-tachi_no_Renai_Zunousen">Check it out</a>
+                            </div>
                         </article>
                     </div>
                 </div>
