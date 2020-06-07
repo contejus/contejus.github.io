@@ -22,7 +22,7 @@ class Footer extends React.Component {
                         </a> Gatsby and
                         <a className="footer-image" href="https://bulma.io/">
                             <svg width="1.5em" height="1.5em" viewBox="0 0 220 320" version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink">
-                                <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                <g stroke="none" strokeWidth="1" fill="none" fill-rule="evenodd">
                                     <g fill="#00D1B2">
                                         <polygon id="Path" points="0 220 20 80 100 0 200 100 140 160 220 240 100 320"></polygon>
                                     </g>

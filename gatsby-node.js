@@ -10,6 +10,25 @@ exports.sourceNodes = async ({ boundActionCreators }) => {
   const res = await fetchLeagueData();
 
   // map into these results and create nodes
+  const summonerData = {
+    id: `${res.data.name}`,
+    parent: `__SOURCE__`,
+    internal: {
+        type: `SummonerData`
+    },
+    name: res.data.name,
+    profileIconId: res.data.profileIconId
+  }
+
+  const userContentDigest = crypto
+    .createHash(`md5`)
+    .update(JSON.stringify(summonerData))
+    .digest(`hex`);
+
+    summonerData.internal.contentDigest = userContentDigest;
+
+    createNode(summonerData);
+
   res.data.matches.map((match) => {
     // Create your node object
     const matchNode = {
@@ -17,24 +36,15 @@ exports.sourceNodes = async ({ boundActionCreators }) => {
       id: `${match.gameId}`,
       parent: `__SOURCE__`,
       internal: {
-        type: `LeagueMatch`, // name of the graphQL query --> allRandomUser {}
-        // contentDigest will be added just after
-        // but it is required
+        type: `LeagueMatch`
       },
       // Other fields that you want to query with graphQl
-      champion: match.champion
-    //   gender: user.gender,
-    //   name: {
-    //     title: user.name.title,
-    //     first: user.name.first,
-    //     last: user.name.last,
-    //   },
-    //   picture: {
-    //     large: user.picture.large,
-    //     medium: user.picture.medium,
-    //     thumbnail: user.picture.thumbnail,
-    //   }
-      // etc...
+      champion: match.champion,
+      map: match.queue.map,
+      gameType: match.queue.description,
+      win: match.win,
+      length: match.length,
+      lane: match.lane
     }
 
     // Get content digest of node. (Required field)
@@ -45,7 +55,6 @@ exports.sourceNodes = async ({ boundActionCreators }) => {
     // add it to matchNode
     matchNode.internal.contentDigest = contentDigest;
 
-    // Create node with the gatsby createNode() API
     createNode(matchNode);
   });
 

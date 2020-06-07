@@ -12,42 +12,63 @@ class LeaguePage extends React.Component {
         return (
         <Layout>
             <Jumbotron 
-                title="About Me" 
+                title="League Stats" 
                 fullscreen="" 
-                subtitle=""
+                subtitle="Check out League of Legends matches I've played"
             />
             <section className="section">
-            <StaticQuery
-                query={graphql`
-                    query {
-                        allLeagueMatch {
-                            edges {
-                                node {
-                                    id
-                                    champion
+                <StaticQuery
+                    query= {
+                        graphql`
+                            query {
+                                allLeagueMatch {
+                                    edges {
+                                        node {
+                                            id
+                                            champion
+                                            map
+                                            gameType
+                                            win
+                                            length
+                                            lane
+                                        }
+                                    }
                                 }
-                            }
-                        }
-                    }  
-                `}
-                render={data => (
-                    data.allLeagueMatch.edges.map((matchNode) => {
-                        const match = matchNode.node;
-                        return (
+                                allSummonerData {
+                                    edges {
+                                        node {
+                                            name
+                                            profileIconId
+                                        }
+                                    }
+                                }
+                            }  
+                        `
+                    }
+                    render= {
+                        data => (
                             <div>
-                                <a>{match.id}</a>
-                                <br></br>
-                                <a>{match.champion}</a>
+                                {data.allLeagueMatch.edges.map((matchNode) => {
+                                    const match = matchNode.node;
+                                    return (
+                                        // TODO: Add component here
+                                        <div>
+                                            <a>{match.id}</a>
+                                            <a>{match.champion}</a>
+                                            <a>{match.map}</a>
+                                            <a>{match.gameType}</a>
+                                            <a>{String(match.win)}</a>
+                                            <a>{match.length}</a>
+                                            <a>{match.lane}</a>
+                                        </div>
+                                    )
+                                })}
+                                <a>{data.allSummonerData.edges[0].node.name}</a>
+                                <a>{data.allSummonerData.edges[0].node.profileIconId}</a>
                             </div>
                         )
-                    })
-                )
-                }
-            />
-            </section>
-            <hr />
-            <section className="section">
-            
+                    }
+                />
             </section>
         </Layout>
         )
