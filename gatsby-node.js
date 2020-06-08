@@ -8,7 +8,7 @@ exports.sourceNodes = async ({ boundActionCreators }) => {
   const fetchLocationData = () => axios.get(`https://tm-location.herokuapp.com/location/`, {
     auth: {
       username: 'client',
-      password: 'k6A2wijidpscY3k'
+      password: '8p\\kS#TqH5thECn\\<+tr'
     }
   }
   );
@@ -44,7 +44,7 @@ exports.sourceNodes = async ({ boundActionCreators }) => {
   const fetchLeagueData = () => axios.get(`https://tm-location.herokuapp.com/league`, {
     auth: {
       username: 'client',
-      password: 'k6A2wijidpscY3k'
+      password: '8p\\kS#TqH5thECn\\<+tr'
     }
   }
   );
