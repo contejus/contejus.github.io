@@ -109,7 +109,7 @@ class MapPage extends React.Component {
       this.addLocation();
       section = 
         <div className="map-div">
-          <div style={{ height: '93.5vh', width: '100%' }}>
+          <div style={{ height: `calc(100vh - 3.25rem)`, width: '100%' }}>
             <StaticQuery
               query= {
                 graphql`

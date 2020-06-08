@@ -3,7 +3,7 @@
 @import "./styles.scss";
 
 .loading-button {
-    height: 93.5vh;
+    min-height: calc(100vh - 3.25rem);
     width: 100%;
     display: flex;
     justify-content: center;
@@ -23,7 +23,7 @@
 
 .warning-div {
     display: flex;
-    height: 93.5vh;
+    min-height: calc(100vh - 3.25rem);
     justify-content: center;
     align-items: center;
 }

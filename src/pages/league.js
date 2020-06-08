@@ -9,8 +9,8 @@ import "../stylesheets/league.scss"
 
 class LeaguePage extends React.Component {
     render() {
-        const profileUrl = "http://ddragon.leagueoflegends.com/cdn/10.11.1/img/profileicon/";
-        const championUrl = "http://ddragon.leagueoflegends.com/cdn/10.11.1/img/champion/";
+        const profileUrl = "https://ddragon.leagueoflegends.com/cdn/10.11.1/img/profileicon/";
+        const championUrl = "https://ddragon.leagueoflegends.com/cdn/10.11.1/img/champion/";
 
         return (
         <Layout>
@@ -60,7 +60,7 @@ class LeaguePage extends React.Component {
                                             </figure>
                                         </div>
                                         <div className="column is-12 center-col">
-                                            <h1 className="title">{data.allSummonerData.edges[0].node.name}</h1>
+                                            <h1 className="title"><a href="https://na.op.gg/summoner/userName=contejus">{data.allSummonerData.edges[0].node.name}</a></h1>
                                         </div>
                                     </div>
                                     <hr />

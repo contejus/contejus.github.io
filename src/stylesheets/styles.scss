@@ -22,6 +22,10 @@ $footer-padding: 3rem 1.5rem 3rem;
 
 @import "../../node_modules/bulma/bulma.sass";
 
+html, body {
+    overflow: auto;
+}
+
 .projects-column {
     text-align: center;
 }
