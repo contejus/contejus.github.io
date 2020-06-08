@@ -65,7 +65,7 @@ class MapPage extends React.Component {
       headers: {
         "Content-Type": "application/json",
         'Accept': 'application/json',
-        'Authorization': 'Basic ' + 'Y2xpZW50Oms2QTJ3aWppZHBzY1kzaw==',
+        'Authorization': 'Basic ' + 'Y2xpZW50UG9zdDp3QlVIN3ZaeFRSSDR6dXc=',
       },
       body: JSON.stringify({
       "latitude": (this.state.latitude),
