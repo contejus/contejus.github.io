@@ -1,4 +1,5 @@
 import React from "react"
+import { StaticQuery, graphql } from "gatsby"
 
 // components
 import Layout from "../components/layout.js"
@@ -96,9 +97,38 @@ class AboutPage extends React.Component {
                         <article className="tile is-child notification is-info">
                             <div className="anime-div">
                                 <h1 className="title">What I'm watching</h1>
-                                <p className="subtitle">Kaguya-sama wa Kokurasetai?: Tensai-tachi no Renai Zunousen</p>
-                                <img src="https://cdn.myanimelist.net/images/anime/1764/106659.jpg" width="240" height="330"/>
-                                <a className="button button-show" href="https://myanimelist.net/anime/40591/Kaguya-sama_wa_Kokurasetai__Tensai-tachi_no_Renai_Zunousen">Check it out</a>
+                                <StaticQuery
+                                    query= {
+                                        graphql`
+                                            query AnimeData {
+                                                allAnime {
+                                                    edges {
+                                                        node {
+                                                            title
+                                                            url
+                                                            image_url
+                                                        }
+                                                    }
+                                                }
+                                            }  
+                                        `
+                                    }
+                                    render= {
+                                        data => (
+                                        <React.Fragment>
+                                            {data.allAnime.edges.map((animeNode) => {
+                                                const anime = animeNode.node;
+                                                return (
+                                                    <React.Fragment>
+                                                        <p className="subtitle">{anime.title}</p>
+                                                        <img src={anime.image_url} width="240" height="330"/>
+                                                        <a className="button button-show" href={anime.url}>Check it out</a>
+                                                    </React.Fragment>
+                                                )
+                                            })}
+                                        </React.Fragment>
+                                    )}
+                                />
                             </div>
                         </article>
                     </div>

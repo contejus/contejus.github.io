@@ -4,6 +4,43 @@ const crypto = require('crypto');
 exports.sourceNodes = async ({ boundActionCreators }) => {
   const { createNode } = boundActionCreators;
 
+  // ANIME API GRAPHQL CALLS FOR ABOUT.JS
+  const fetchAnimeData = () => axios.get(`https://tm-location.herokuapp.com/anime`, {
+    auth: {
+      username: 'client',
+      password: '8p\\kS#TqH5thECn\\<+tr'
+    }
+  }
+  );
+  // await for results
+  const animeRes = await fetchAnimeData();
+  
+  animeRes.data.anime.map((anime) => {
+    // Create your node object
+    const animeNode = {
+      // Required fields
+      id: `${String(anime.mal_id)}`,
+      parent: `__SOURCE__`,
+      internal: {
+        type: `anime`
+      },
+      // Other fields that you want to query with graphQl
+      title: anime.title,
+      url: anime.url,
+      image_url: anime.image_url
+    }
+
+    // Get content digest of node. (Required field)
+    const contentDigest = crypto
+      .createHash(`md5`)
+      .update(JSON.stringify(animeNode))
+      .digest(`hex`);
+    // add it to matchNode
+    animeNode.internal.contentDigest = contentDigest;
+
+    createNode(animeNode);
+  });
+
   // LOCATION API GRAPHQL CALLS FOR MAPS.JS
   const fetchLocationData = () => axios.get(`https://tm-location.herokuapp.com/location/`, {
     auth: {
