@@ -8,6 +8,8 @@
 
 [Sass Setup](https://sass-lang.com/install)
 
+[locationAPI](https://tm-location.herokuapp.com)
+
 ## Installation steps
 
 This project was initially developed using Node.js + Gatsby on Windows. However, development is mostly on my Debian WSL 2 implementation to avoid having to install the 7 GB+ Visual C++ Build Tools used by `gatsby-image-sharp`(?) and `node-sass`(?). 
@@ -26,12 +28,12 @@ This project was initially developed using Node.js + Gatsby on Windows. However,
 
 1. ~Migrate from `node-sass` to `sass` (dart-sass) to avoid having to install Visual C++ Build Tools~
 
-2. Add CMS for dynamic rendering of page content (Strapi/Ghost)
+2. Add CMS for build-time rendering of page content (Strapi/Ghost)
 
 3. Figure out alternative to API key client-side storage
 
-4. Better credential storage for DRF API
+4. ~Better credential storage for DRF API~
 
-5. Blog feature/League stats tracker
+5. Blog feature/~League stats tracker~
 
 6. Code refactoring
