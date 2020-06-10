@@ -10,8 +10,6 @@
 
 [locationAPI](https://tm-location.herokuapp.com)
 
-[Strapi CMS](https://tm-content.herokuapp.com)
-
 ## Installation steps
 
 This project was initially developed using Node.js + Gatsby on Windows. However, development is mostly on my Debian WSL 2 implementation to avoid having to install the 7 GB+ Visual C++ Build Tools used by `gatsby-image-sharp`(?) and `node-sass`(?). 
