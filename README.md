@@ -34,6 +34,6 @@ This project was initially developed using Node.js + Gatsby on Windows. However,
 
 4. ~Better credential storage for DRF API~
 
-5. Blog feature/League stats tracker
+5. Blog feature/~League stats tracker~
 
 6. Code refactoring
