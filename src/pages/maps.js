@@ -46,7 +46,7 @@ class MapPage extends React.Component {
 
   getLocation() {
     // look up new location
-    fetch("https://json.geoiplookup.io")
+    fetch("https://tm-location.herokuapp.com/geolocate")
     .then(res => res.json())
     .then(result => {
         this.setState({
@@ -55,22 +55,6 @@ class MapPage extends React.Component {
             location: result.city + ", " + result.region + ", " + result.country_name,
             gotUserLocation: true
         });
-    })
-  }
-
-  addLocation(){
-    // store new user location to API
-    fetch("https://tm-location.herokuapp.com/location/", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        'Accept': 'application/json',
-        'Authorization': 'Basic ' + 'Y2xpZW50UG9zdDp3QlVIN3ZaeFRSSDR6dXc=',
-      },
-      body: JSON.stringify({
-      "latitude": (this.state.latitude),
-      "longitude": (this.state.longitude)
-      }),      
     })
   }
 
@@ -106,7 +90,6 @@ class MapPage extends React.Component {
             </article>
         </div>
     } else if (gotUserLocation) {
-      this.addLocation();
       section = 
         <div className="map-div">
           <div style={{ height: `calc(100vh - 3.25rem)`, width: '100%' }}>
