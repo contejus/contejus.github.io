@@ -6,6 +6,7 @@ import Navbar from "../components/navbar.js"
 import GoogleMapReact from 'google-map-react';
 
 import "../stylesheets/maps.scss"
+const axios = require('axios');
 
 const Circle = ({ text }) => (
   <div style={{
@@ -46,18 +47,17 @@ class MapPage extends React.Component {
 
   getLocation() {
     // look up new location
-    fetch("https://tm-location.herokuapp.com/geolocate", {
-      method: "GET",
-      headers: {
-        'Authorization': 'Basic ' + 'Y2xpZW50OjhwXFxrUyNUcUg1dGhFQ25cXDwrdHI=',
+    axios.get(`https://tm-location.herokuapp.com/anime`, {
+      auth: {
+        username: 'client',
+        password: '8p\\kS#TqH5thECn\\<+tr'
       }
     })
-    .then(res => res.json())
     .then(result => {
         this.setState({
-            latitude: result.latitude,
-            longitude: result.longitude,
-            location: result.city + ", " + result.region + ", " + result.country_name,
+            latitude: result.data.latitude,
+            longitude: result.data.longitude,
+            location: result.data.city + ", " + result.data.region + ", " + result.data.country_name,
             gotUserLocation: true
         });
     })
