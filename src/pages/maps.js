@@ -46,7 +46,12 @@ class MapPage extends React.Component {
 
   getLocation() {
     // look up new location
-    fetch("https://tm-location.herokuapp.com/geolocate")
+    fetch("https://tm-location.herokuapp.com/geolocate", {
+      method: "GET",
+      headers: {
+        'Authorization': 'Basic ' + 'Y2xpZW50OjhwXFxrUyNUcUg1dGhFQ25cXDwrdHI=',
+      }
+    })
     .then(res => res.json())
     .then(result => {
         this.setState({
@@ -79,8 +84,7 @@ class MapPage extends React.Component {
                 </div>
                 <div className="message-body">
                     <p>
-                        This page finds your general (not exact) location by using your IP address and stores only the latitude and
-                        longitude in my API. Please click "Accept" if you are comfortable with this or "Cancel" to go home.
+                        This page finds your general location by using your IP address. Please click "Accept" if you are comfortable with this or "Cancel" to go home.
                     </p>
                 </div>
                 <div className="choice-div">
