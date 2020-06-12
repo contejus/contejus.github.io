@@ -30,7 +30,7 @@ This project was initially developed using Node.js + Gatsby on Windows. However,
 
 2. Add CMS for build-time rendering of page content (Strapi/Ghost)
 
-3. Figure out alternative to API key client-side storage
+3. ~Figure out alternative to API key client-side storage~
 
 4. ~Better credential storage for DRF API~
 
