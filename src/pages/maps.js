@@ -47,7 +47,7 @@ class MapPage extends React.Component {
 
   getLocation() {
     // look up new location
-    axios.get(`https://tm-location.herokuapp.com/anime`, {
+    axios.get(`https://tm-location.herokuapp.com/geolocate`, {
       auth: {
         username: 'client',
         password: '8p\\kS#TqH5thECn\\<+tr'
