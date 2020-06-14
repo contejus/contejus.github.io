@@ -31,7 +31,7 @@ class MapPage extends React.Component {
       lng: 0
     },
     zoom: 0,
-    key: process.env.GMAPS_API_KEY
+    key: process.env.GATSBY_GMAPS_API_KEY
   };
 
   constructor() {
@@ -49,8 +49,8 @@ class MapPage extends React.Component {
     // look up new location
     axios.get(`https://tm-location.herokuapp.com/geolocate`, {
       auth: {
-        username: process.env.CLIENT_USERNAME,
-        password: process.env.CLIENT_PASSWORD
+        username: process.env.GATSBY_CLIENT_USERNAME,
+        password: process.env.GATSBY_CLIENT_PASSWORD
       }
     })
     .then(result => {
