@@ -7,7 +7,6 @@ import GoogleMapReact from 'google-map-react';
 
 import "../stylesheets/maps.scss"
 const axios = require('axios');
-require('dotenv').config()
 
 const Circle = ({ text }) => (
   <div style={{
