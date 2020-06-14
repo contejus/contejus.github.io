@@ -7,6 +7,7 @@ import GoogleMapReact from 'google-map-react';
 
 import "../stylesheets/maps.scss"
 const axios = require('axios');
+require('dotenv').config()
 
 const Circle = ({ text }) => (
   <div style={{
@@ -31,7 +32,7 @@ class MapPage extends React.Component {
       lng: 0
     },
     zoom: 0,
-    key: 'AIzaSyAgeMf2wsomCk45C0JsatuRdgyy7NgYVEc'
+    key: process.env.GMAPS_API_KEY
   };
 
   constructor() {
@@ -49,8 +50,8 @@ class MapPage extends React.Component {
     // look up new location
     axios.get(`https://tm-location.herokuapp.com/geolocate`, {
       auth: {
-        username: 'client',
-        password: '8p\\kS#TqH5thECn\\<+tr'
+        username: process.env.CLIENT_USERNAME,
+        password: process.env.CLIENT_PASSWORD
       }
     })
     .then(result => {

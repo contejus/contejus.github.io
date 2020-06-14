@@ -1,5 +1,6 @@
 const axios = require('axios');
 const crypto = require('crypto');
+require('dotenv').config()
 
 exports.sourceNodes = async ({ boundActionCreators }) => {
   const { createNode } = boundActionCreators;
@@ -7,8 +8,8 @@ exports.sourceNodes = async ({ boundActionCreators }) => {
   // ANIME API GRAPHQL CALLS FOR ABOUT.JS
   const fetchAnimeData = () => axios.get(`https://tm-location.herokuapp.com/anime`, {
     auth: {
-      username: 'client',
-      password: '8p\\kS#TqH5thECn\\<+tr'
+      username: process.env.CLIENT_USERNAME,
+      password: process.env.CLIENT_PASSWORD
     }
   }
   );
@@ -44,8 +45,8 @@ exports.sourceNodes = async ({ boundActionCreators }) => {
   // LOCATION API GRAPHQL CALLS FOR MAPS.JS
   const fetchLocationData = () => axios.get(`https://tm-location.herokuapp.com/location/`, {
     auth: {
-      username: 'client',
-      password: '8p\\kS#TqH5thECn\\<+tr'
+      username: process.env.CLIENT_USERNAME,
+      password: process.env.CLIENT_PASSWORD
     }
   }
   );
@@ -80,8 +81,8 @@ exports.sourceNodes = async ({ boundActionCreators }) => {
   // LEAGUE API GRAPHQL CALLS FOR LEAGUE.JS
   const fetchLeagueData = () => axios.get(`https://tm-location.herokuapp.com/league`, {
     auth: {
-      username: 'client',
-      password: '8p\\kS#TqH5thECn\\<+tr'
+      username: process.env.CLIENT_USERNAME,
+      password: process.env.CLIENT_PASSWORD
     }
   }
   );
