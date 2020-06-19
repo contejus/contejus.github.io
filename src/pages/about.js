@@ -126,9 +126,9 @@ class AboutPage extends React.Component {
                                             }
                                             render= {
                                                 data => (
-                                                <React.Fragment>
+                                                <div className="is-flex anime-content">
                                                     {this.getAnime(data)}
-                                                </React.Fragment>
+                                                </div>
                                             )}
                                         />
                                     </div>
