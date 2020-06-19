@@ -99,8 +99,8 @@ class AboutPage extends React.Component {
                                     <p className="title">Coming soon...</p>
                                     <p className="subtitle">Things that I'll be slowly adding to the site:</p>
                                     <div className="content">
-                                        CMS system &bull; User drawing canvas &bull; APIs for my ML projects
-                                        &bull; League stats view &bull; Better documentation
+                                        User drawing canvas &bull; APIs for my ML projects
+                                        &bull; Better documentation
                                     </div>
                                 </article>
                             </div>
