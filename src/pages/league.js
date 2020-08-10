@@ -9,8 +9,8 @@ import "../stylesheets/league.scss"
 
 class LeaguePage extends React.Component {
     render() {
-        const profileUrl = "https://ddragon.leagueoflegends.com/cdn/10.15.1/img/profileicon/";
-        const championUrl = "https://ddragon.leagueoflegends.com/cdn/10.15.1/img/champion/";
+        const profileUrl = "https://ddragon.leagueoflegends.com/cdn/" + process.env.DD_VERSION + "/img/profileicon/";
+        const championUrl = "https://ddragon.leagueoflegends.com/cdn/"+ process.env.DD_VERSION + "/img/champion/";
 
         return (
         <Layout>
