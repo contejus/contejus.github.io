@@ -38,8 +38,7 @@ jobs:
           CLIENT_POST_PASSWORD: ${{ secrets.CLIENT_POST_PASSWORD }}
           GATSBY_GMAPS_API_KEY: ${{ secrets.GMAPS_API_KEY }}
           GATSBY_CLIENT_USERNAME: ${{ secrets.CLIENT_USERNAME }}
-          GATSBY_CLIENT_PASSWORD: ${{ secrets.CLIENT_PASSWORD }}
-          DD_VERSION: ${{ secrets.DD_VERSION }} 
+          GATSBY_CLIENT_PASSWORD: ${{ secrets.CLIENT_PASSWORD }} 
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
