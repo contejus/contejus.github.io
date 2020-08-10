@@ -24,7 +24,7 @@ class IndexPage extends React.Component {
             background="use-art" 
             title="Tejus Mathew" 
             fullscreen="is-fullheight-with-navbar" 
-            subtitle="ECE Senior at The University of Texas"
+            subtitle="ECE Graduate at The University of Texas"
           />
       </div>
     )
