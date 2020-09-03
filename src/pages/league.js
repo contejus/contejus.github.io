@@ -7,6 +7,10 @@ import Jumbotron from "../components/jumbotron.js"
 // stylesheet
 import "../stylesheets/league.scss"
 
+import gold from "../images/GOLD.png"
+import bronze from "../images/BRONZE.png"
+import silver from "../images/SILVER.png"
+
 class LeaguePage extends React.Component {
     render() {
         const profileUrl = "https://ddragon.leagueoflegends.com/cdn/10.16.1/img/profileicon/";
@@ -43,6 +47,13 @@ class LeaguePage extends React.Component {
                                         node {
                                             name
                                             profileIconId
+                                            ranked {
+                                                queueType
+                                                tier
+                                                wins
+                                                losses
+                                                rank
+                                              }
                                         }
                                     }
                                 }
@@ -54,13 +65,47 @@ class LeaguePage extends React.Component {
                             <React.Fragment>
                                 <div className="container">
                                     <div className="columns wrap-info">
-                                        <div className="column is-12 center-col">
-                                            <figure className="image is-128x128">
-                                                <img className="is-rounded" src={profileUrl + data.allSummonerData.edges[0].node.profileIconId + ".png"} />
-                                            </figure>
+                                        <div className="column is-4 center-col">
+                                            <div className="columns wrap-info">
+                                                <div className="column is-12 center-col">
+                                                    <figure className="image is-128x128">
+                                                        <img className="is-rounded" src={profileUrl + data.allSummonerData.edges[0].node.profileIconId + ".png"} />
+                                                    </figure>
+                                                </div>
+                                                <div className="column is-12 center-col">
+                                                    <h1 className="title"><a href="https://na.op.gg/summoner/userName=contejus">{data.allSummonerData.edges[0].node.name}</a></h1>  
+                                                </div>
+                                            </div>
                                         </div>
-                                        <div className="column is-12 center-col">
-                                            <h1 className="title"><a href="https://na.op.gg/summoner/userName=contejus">{data.allSummonerData.edges[0].node.name}</a></h1>
+                                        <div className="column is-4 center-col">
+                                            <div className="columns wrap-info">
+                                                <div className="column is-12 center-col" >
+                                                    <strong>{data.allSummonerData.edges[0].node.ranked[0].queueType.replace(/_/g, " ")}</strong>
+                                                </div>
+                                                <div className="column is-12 center-col" >
+                                                    <figure className="image is-96x96">
+                                                        <img className="is-rounded" src={data.allSummonerData.edges[0].node.ranked[0].tier == "GOLD" ? gold: data.allSummonerData.edges[0].node.ranked[0].tier == "SILVER" ? silver: bronze} />
+                                                    </figure>
+                                                </div>
+                                                <div className="column is-12 center-col" >
+                                                    <h1 className="subtitle">{data.allSummonerData.edges[0].node.ranked[1].tier + " " + data.allSummonerData.edges[0].node.ranked[0].rank}</h1>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div className="column is-4 center-col">
+                                            <div className="columns wrap-info">
+                                                <div className="column is-12 center-col" >
+                                                    <strong>{data.allSummonerData.edges[0].node.ranked[1].queueType.replace(/_/g, " ")}</strong>
+                                                </div>
+                                                <div className="column is-12 center-col" >
+                                                    <figure className="image is-96x96">
+                                                        <img className="is-rounded" src={data.allSummonerData.edges[0].node.ranked[1].tier == "GOLD" ? gold: data.allSummonerData.edges[0].node.ranked[1].tier == "SILVER" ? silver: bronze} />
+                                                    </figure>
+                                                </div>
+                                                <div className="column is-12 center-col" >
+                                                    <h1 className="subtitle">{data.allSummonerData.edges[0].node.ranked[1].tier + " " + data.allSummonerData.edges[0].node.ranked[1].rank}</h1>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                     <hr />

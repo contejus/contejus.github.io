@@ -96,7 +96,8 @@ exports.sourceNodes = async ({ boundActionCreators }) => {
         type: `SummonerData`
     },
     name: res.data.name,
-    profileIconId: res.data.profileIconId
+    profileIconId: res.data.profileIconId,
+    ranked: res.data.ranked
   }
 
   const userContentDigest = crypto
