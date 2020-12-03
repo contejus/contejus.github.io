@@ -36,4 +36,4 @@ This project was initially developed using Node.js + Gatsby on Windows. However,
 
 5. Blog feature/~League stats tracker~
 
-6. Code refactoring
+6. Code refactoring (lol)
