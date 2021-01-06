@@ -15,7 +15,7 @@
     "deploy": "gatsby build && gh-pages -d public -b master"
   },
   "dependencies": {
-    "axios": "^0.20.0",
+    "axios": "^0.21.1",
     "bulma": "^0.9.0",
     "dotenv": "^8.2.0",
     "gatsby": "^2.24.62",
