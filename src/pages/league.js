@@ -50,8 +50,6 @@ class LeaguePage extends React.Component {
                                             ranked {
                                                 queueType
                                                 tier
-                                                wins
-                                                losses
                                                 rank
                                               }
                                         }

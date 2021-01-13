@@ -97,7 +97,18 @@ exports.sourceNodes = async ({ boundActionCreators }) => {
     },
     name: res.data.name,
     profileIconId: res.data.profileIconId,
-    ranked: res.data.ranked
+    ranked: [
+      {
+        queueType: "RANKED SOLO 5x5",
+        tier: "GOLD",
+        rank: "IV"
+      },
+      {
+        queueType: "RANKED FLEX SR",
+        tier: "GOLD",
+        rank: "IV"
+      }
+    ]
   }
 
   const userContentDigest = crypto
