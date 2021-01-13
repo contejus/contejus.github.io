@@ -59,8 +59,8 @@ class MapPage extends React.Component {
             longitude: result.data.longitude,
             location: result.data.city + ", " + result.data.region + ", " + result.data.country_name,
             key: window.crypto.subtle.decrypt({
-              name: "AES-CBC",
-              iv: "chicken_bacon"
+              name: "AES-GCM",
+              iv: "chicken_baconAsF"
               },
               process.env.DECRYPTION_KEY,
               result.data.key),
