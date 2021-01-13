@@ -36,6 +36,7 @@ jobs:
           CLIENT_PASSWORD: ${{ secrets.CLIENT_PASSWORD }}
           CLIENT_POST_USERNAME: ${{ secrets.CLIENT_POST_USERNAME }}
           CLIENT_POST_PASSWORD: ${{ secrets.CLIENT_POST_PASSWORD }}
+          DECRYPTION_KEY: ${{ secrets.DECRYPTION_KEY }}
           GATSBY_CLIENT_USERNAME: ${{ secrets.CLIENT_USERNAME }}
           GATSBY_CLIENT_PASSWORD: ${{ secrets.CLIENT_PASSWORD }} 
 

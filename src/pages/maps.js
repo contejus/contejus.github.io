@@ -58,7 +58,12 @@ class MapPage extends React.Component {
             latitude: result.data.latitude,
             longitude: result.data.longitude,
             location: result.data.city + ", " + result.data.region + ", " + result.data.country_name,
-            key: result.data.key,
+            key: window.crypto.subtle.decrypt({
+              name: "AES-CBC",
+              iv: "chicken_bacon"
+              },
+              process.env.DECRYPTION_KEY,
+              result.data.key),
             gotUserLocation: true
         });
     })
