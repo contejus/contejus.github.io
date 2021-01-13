@@ -30,8 +30,7 @@ class MapPage extends React.Component {
       lat: 0,
       lng: 0
     },
-    zoom: 0,
-    key: process.env.GATSBY_GMAPS_API_KEY
+    zoom: 0
   };
 
   constructor() {
@@ -41,6 +40,7 @@ class MapPage extends React.Component {
         longitude: [],
         location: [],
         permission: false,
+        key: "", 
         gotUserLocation: false
     }
   }  
@@ -58,6 +58,7 @@ class MapPage extends React.Component {
             latitude: result.data.latitude,
             longitude: result.data.longitude,
             location: result.data.city + ", " + result.data.region + ", " + result.data.country_name,
+            key: result.data.key,
             gotUserLocation: true
         });
     })
@@ -117,7 +118,7 @@ class MapPage extends React.Component {
                   <React.Fragment>
                     <GoogleMapReact
                       bootstrapURLKeys={
-                            { key: this.props.key}
+                            { key: this.state.key}
                         }
                       defaultCenter={this.props.center}
                       defaultZoom={this.props.zoom}
