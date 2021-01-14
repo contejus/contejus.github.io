@@ -6,7 +6,7 @@ import "../stylesheets/styles.scss"
 
 class IndexPage extends React.Component {
   componentDidMount(){
-    fetch(process.env.GATSBY_API_ENDPOINT + "health")
+    fetch(process.env.API_ENDPOINT + "health")
     .then(res => res.json())
     .then(result => result);
   }

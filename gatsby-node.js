@@ -5,7 +5,7 @@ exports.sourceNodes = async ({ boundActionCreators }) => {
   const { createNode } = boundActionCreators;
 
   // ANIME API GRAPHQL CALLS FOR ABOUT.JS
-  const fetchAnimeData = () => axios.get(process.env.GATSBY_API_ENDPOINT + `anime`, {
+  const fetchAnimeData = () => axios.get(process.env.API_ENDPOINT + `anime`, {
     auth: {
       username: process.env.CLIENT_USERNAME,
       password: process.env.CLIENT_PASSWORD
@@ -42,7 +42,7 @@ exports.sourceNodes = async ({ boundActionCreators }) => {
   });
 
   // LOCATION API GRAPHQL CALLS FOR MAPS.JS
-  const fetchLocationData = () => axios.get(process.env.GATSBY_API_ENDPOINT + `location/`, {
+  const fetchLocationData = () => axios.get(process.env.API_ENDPOINT + `location/`, {
     auth: {
       username: process.env.CLIENT_USERNAME,
       password: process.env.CLIENT_PASSWORD
@@ -78,7 +78,7 @@ exports.sourceNodes = async ({ boundActionCreators }) => {
   });
 
   // LEAGUE API GRAPHQL CALLS FOR LEAGUE.JS
-  const fetchLeagueData = () => axios.get(process.env.GATSBY_API_ENDPOINT + `league`, {
+  const fetchLeagueData = () => axios.get(process.env.API_ENDPOINT + `league`, {
     auth: {
       username: process.env.CLIENT_USERNAME,
       password: process.env.CLIENT_PASSWORD
