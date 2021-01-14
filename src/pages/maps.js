@@ -47,7 +47,7 @@ class MapPage extends React.Component {
 
   getLocation() {
     // look up new location
-    axios.get(process.env.GATSBY_API_ENDPOINT + `geolocate`, {
+    axios.get(process.env.API_ENDPOINT + `geolocate`, {
       auth: {
         username: process.env.GATSBY_CLIENT_USERNAME,
         password: process.env.GATSBY_CLIENT_PASSWORD
