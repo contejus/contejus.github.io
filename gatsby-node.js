@@ -1,8 +1,8 @@
 const axios = require('axios');
 const crypto = require('crypto');
 
-exports.sourceNodes = async ({ boundActionCreators }) => {
-  const { createNode } = boundActionCreators;
+exports.sourceNodes = async ({ actions }) => {
+  const { createNode } = actions;
 
   // ANIME API GRAPHQL CALLS FOR ABOUT.JS
   const fetchAnimeData = () => axios.get(`https://tm-location.herokuapp.com/anime`, {
@@ -96,19 +96,7 @@ exports.sourceNodes = async ({ boundActionCreators }) => {
         type: `SummonerData`
     },
     name: res.data.name,
-    profileIconId: res.data.profileIconId,
-    ranked: [
-      {
-        queueType: "RANKED SOLO 5x5",
-        tier: "GOLD",
-        rank: "IV"
-      },
-      {
-        queueType: "RANKED FLEX SR",
-        tier: "GOLD",
-        rank: "IV"
-      }
-    ]
+    profileIconId: res.data.profileIconId
   }
 
   const userContentDigest = crypto
