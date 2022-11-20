@@ -6,7 +6,7 @@ import "../stylesheets/styles.scss"
 
 class IndexPage extends React.Component {
   componentDidMount(){
-    fetch("https://tm-location.herokuapp.com/health")
+    fetch("https://tm-location-4hhy.onrender.com/health")
     .then(res => res.json())
     .then(result => result);
   }
