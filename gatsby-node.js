@@ -5,7 +5,7 @@ exports.sourceNodes = async ({ actions }) => {
   const { createNode } = actions;
 
   // ANIME API GRAPHQL CALLS FOR ABOUT.JS
-  const fetchAnimeData = () => axios.get(`https://tm-location.herokuapp.com/anime`, {
+  const fetchAnimeData = () => axios.get(`https://tm-location-4hhy.onrender.com/anime`, {
     auth: {
       username: process.env.CLIENT_USERNAME,
       password: process.env.CLIENT_PASSWORD
@@ -42,7 +42,7 @@ exports.sourceNodes = async ({ actions }) => {
   });
 
   // LOCATION API GRAPHQL CALLS FOR MAPS.JS
-  const fetchLocationData = () => axios.get(`https://tm-location.herokuapp.com/location/`, {
+  const fetchLocationData = () => axios.get(`https://tm-location-4hhy.onrender.com/location/`, {
     auth: {
       username: process.env.CLIENT_USERNAME,
       password: process.env.CLIENT_PASSWORD
@@ -78,7 +78,7 @@ exports.sourceNodes = async ({ actions }) => {
   });
 
   // LEAGUE API GRAPHQL CALLS FOR LEAGUE.JS
-  const fetchLeagueData = () => axios.get(`https://tm-location.herokuapp.com/league`, {
+  const fetchLeagueData = () => axios.get(`https://tm-location-4hhy.onrender.com/league`, {
     auth: {
       username: process.env.CLIENT_USERNAME,
       password: process.env.CLIENT_PASSWORD
