@@ -8,7 +8,7 @@
 
 [Sass Setup](https://sass-lang.com/install)
 
-[locationAPI](https://tm-location.herokuapp.com)
+[locationAPI](https://tm-location-4hhy.onrender.com/)
 
 ## Installation steps
 
