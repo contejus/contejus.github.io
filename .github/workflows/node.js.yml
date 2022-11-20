@@ -17,9 +17,9 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: Setup Node
-        uses: actions/setup-node@v3.5.1
+        uses: actions/setup-node@v1
         with:
-          node-version: '18.12.1'
+          node-version: '14.x'
 
       - name: Cache dependencies
         uses: actions/cache@v1
@@ -45,3 +45,5 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./public
           publish_branch: master
+
+
