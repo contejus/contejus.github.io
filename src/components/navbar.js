@@ -84,7 +84,7 @@ class Navbar extends React.Component {
                                 <path d="M22 6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6zm-2 0l-8 5-8-5h16zm0 12H4V8l8 5 8-5v10z"/>
                             </svg>
                         </a>
-                        <a className="navbar-item" rel="noopener noreferrer" href="https://drive.google.com/file/d/1oXEX_1MEKjVcuxG5_IAWs1yFOGm57Px6/view?usp=sharing" target="_blank">
+                        <a className="navbar-item" rel="noopener noreferrer" href="https://drive.google.com/file/d/1e2abGpyPNVG9GDh3t72ogOdMKpt17sNZ/view?usp=sharing" target="_blank">
                             <svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" viewBox="0 0 24 24" fill="currentColor" >
                                 <path d="M0 0h24v24H0V0z" fill="none"/>
                                 <title>Resume</title>
