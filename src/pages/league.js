@@ -13,8 +13,8 @@ import silver from "../images/SILVER.png"
 
 class LeaguePage extends React.Component {
     render() {
-        const profileUrl = "https://ddragon.leagueoflegends.com/cdn/11.1.1/img/profileicon/";
-        const championUrl = "https://ddragon.leagueoflegends.com/cdn/11.1.1/img/champion/";
+        const profileUrl = "https://ddragon.leagueoflegends.com/cdn/13.12.1/img/profileicon/";
+        const championUrl = "https://ddragon.leagueoflegends.com/cdn/13.12.1/img/champion/";
 
         return (
         <Layout>
