@@ -66,7 +66,7 @@ class LeaguePage extends React.Component {
                                                     </figure>
                                                 </div>
                                                 <div className="column is-12 center-col">
-                                                    <h1 className="title"><a href="https://na.op.gg/summoner/userName=contejus">{data.allSummonerData.edges[0].node.name}</a></h1>  
+                                                    <h1 className="title"><a href="https://www.op.gg/summoners/na/contejus-NA1">{data.allSummonerData.edges[0].node.name}</a></h1>  
                                                 </div>
                                             </div>
                                         </div>      
