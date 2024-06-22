@@ -52,7 +52,7 @@ const ContactPage = () => {
                         </a>
                         </div>
                         <div className="column is-3">
-                        <a rel="noopener noreferrer" href="https://drive.google.com/file/d/1UF3lEhhazeLtPX7F0nHyFXuvd_WYmOqk/view?usp=sharing" target="_blank">
+                        <a rel="noopener noreferrer" href="https://drive.google.com/file/d/1e2abGpyPNVG9GDh3t72ogOdMKpt17sNZ/view" target="_blank">
                             <svg xmlns="http://www.w3.org/2000/svg" width="3em" height="3em" viewBox="0 0 24 24" fill="white" >
                                 <path d="M0 0h24v24H0V0z" fill="none"/>
                                 <title>Resume</title>
